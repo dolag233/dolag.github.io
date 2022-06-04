@@ -1,4 +1,5 @@
 # 简介
+
 本工具集提供了分门别类的Houdini资产，默认全局安装，可以以节点的形式直接调用。
 + 这些资产都放置在DolagPlugin/otls内
 + 资产名称以Dolag开头。
@@ -11,7 +12,9 @@
 由于节点数目颇多，仅挑选必要节点进行说明。
 
 # 节点说明
+
 ## Dolag Parse Json Data To Gemotry
+
 用来解析简单结构的json数据。
 由于几何体承载数据类型有限，以及json数据嵌套的复杂性，本节点只支持由字典组成的列表形式的json解析。如下：
 ```json
@@ -66,6 +69,7 @@
 用户可选择Point和Primitive两种几何元素类型，此节点会将解析属性输出到用户选择的几何元素类型中。
 
 ## Dolag Divide Points By Weight
+
 此节点有两个输入，第一个输入是待划分的点，第二个输入是用来划分的数据，与[[Dolag Parse Json Data To Gemotry]]搭配有奇效。
 节点要求第二个输入包含用以划分的元信息：
 1. 节点可以选择要读取的几何元素类型(Point和Primitive)，第二个输入的每一个对应几何元素都代表了一个划分
