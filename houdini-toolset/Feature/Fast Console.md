@@ -46,20 +46,19 @@ item_name为此命令在快速命令中显示和搜索的名称，“alias”表
 callback(context)
 ```
 context参数是快速命令框架传入的ConsoleContext类型的参数，可以视为一个字典来访问其值。其键和值如下：
-|  键   | 值  |
-|  ----  | ----  |
-| selected_nodes  | 选中节点的元组，如果没有选中则返回空元组 |
-| hit_item  | 在鼠标下方的节点，如果没用则返回None |
-| screen_pos | 鼠标在屏幕上的绝对位置，元组类型 |
-| editor_pos | 鼠标在Network Editor上的绝对位置，采用Network Editor的坐标系和单位，元组类型 |
-| editor | 当前Network Editor对象 |
-| qt_keys | 按下了哪些键，其值为PySide2中的key值 |
-| network_node | 当前Network Editor面板所显示的Network节点 |
++ selected_nodes: 选中节点的元组，如果没有选中则返回空元组
++ hit_item: 在鼠标下方的节点，如果没用则返回None
++ screen_pos: 鼠标在屏幕上的绝对位置，元组类型
++ editor_pos: 鼠标在Network Editor上的绝对位置，采用Network Editor的坐标系和单位，元组类型
++ editor: 当前Network Editor对象
++ qt_keys: 按下了哪些键，其值为PySide2中的key值
++ network_node: 当前Network Editor面板所显示的Network节点
 快速命令工具会在合适的时候执行用户传入的callback回调函数。
 
 在完成了ConsoleItem的实例化后，将其插入到DolagPlugin/scripts/console/ConsoleItemCustom.py中的CUSTOM_ITEMS变量中——快速命令工具会读取此变量将其中的每一项都加入到快速命令列表中。
 例如，在DolagPlugin/scripts/console/ConsoleItemCustom.py尾部插入如下语句，即可添加自定义命令。
 ```
+from Dolag import utils as du
 ...
 
 def copy_node_path_cb(context):  
