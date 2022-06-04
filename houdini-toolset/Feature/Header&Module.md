@@ -37,12 +37,12 @@ from Dolag import path
 #### class Singleton
 单例模式的元类。使用时将元类设为此类即可。
 ```python
-''' python2 '''
+\#\# python2
 class foo():
 	__meta_class__ = Singleton
 	...
 
-''' python3 '''
+\#\# python3
 class foo(__meta_class__ = Singleton)
 	...
 ```
