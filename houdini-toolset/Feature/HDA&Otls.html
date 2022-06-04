@@ -172,7 +172,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" >
+        <li class="chapter " data-level="1.3.3" data-path="Header&Module">
+            
+                <span>
+            
+                    
+                    代码库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" >
             
                 <span>
             
@@ -186,7 +199,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.3.1" data-path="Main Menu.html">
+        <li class="chapter " data-level="1.3.4.1" data-path="Main Menu.html">
             
                 <a href="Main Menu.html">
             
@@ -268,54 +281,55 @@
 &#x7531;&#x4E8E;&#x8282;&#x70B9;&#x6570;&#x76EE;&#x9887;&#x591A;&#xFF0C;&#x4EC5;&#x6311;&#x9009;&#x5FC5;&#x8981;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#x3002;<h1 id="&#x8282;&#x70B9;&#x8BF4;&#x660E;">&#x8282;&#x70B9;&#x8BF4;&#x660E;</h1>
 <h2 id="dolag-parse-json-data-to-gemotry">Dolag Parse Json Data To Gemotry</h2>
 &#x7528;&#x6765;&#x89E3;&#x6790;&#x7B80;&#x5355;&#x7ED3;&#x6784;&#x7684;json&#x6570;&#x636E;&#x3002;
-&#x7531;&#x4E8E;&#x51E0;&#x4F55;&#x4F53;&#x627F;&#x8F7D;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6709;&#x9650;&#xFF0C;&#x4EE5;&#x53CA;json&#x6570;&#x636E;&#x5D4C;&#x5957;&#x7684;&#x590D;&#x6742;&#x6027;&#xFF0C;&#x672C;&#x8282;&#x70B9;&#x53EA;&#x652F;&#x6301;&#x7531;&#x5B57;&#x5178;&#x7EC4;&#x6210;&#x7684;&#x5217;&#x8868;&#x5F62;&#x5F0F;&#x7684;json&#x89E3;&#x6790;&#x3002;&#x5982;&#x4E0B;&#xFF1A;<pre><code>[
+&#x7531;&#x4E8E;&#x51E0;&#x4F55;&#x4F53;&#x627F;&#x8F7D;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6709;&#x9650;&#xFF0C;&#x4EE5;&#x53CA;json&#x6570;&#x636E;&#x5D4C;&#x5957;&#x7684;&#x590D;&#x6742;&#x6027;&#xFF0C;&#x672C;&#x8282;&#x70B9;&#x53EA;&#x652F;&#x6301;&#x7531;&#x5B57;&#x5178;&#x7EC4;&#x6210;&#x7684;&#x5217;&#x8868;&#x5F62;&#x5F0F;&#x7684;json&#x89E3;&#x6790;&#x3002;&#x5982;&#x4E0B;&#xFF1A;<pre><code class="lang-json">[
 {
- &quot;unreal_instance&quot;:&quot;StaticMesh&apos;/Game/STF/Pack03-LandscapePro/Environment/Foliage/Grass/SM_GrassGroup01.SM_GrassGroup01&apos;&quot;,
- &quot;propagate_dist&quot;:420.0,
- &quot;heliophile&quot;:0.12,
- &quot;species&quot;:&quot;VegA&quot;,
- &quot;viability&quot;:0.9,
- &quot;viability_radius&quot;:0.035,
- &quot;animal_spread_factor&quot;:0.9,
- &quot;pioneer_order&quot;:0,
- &quot;init_seed_weight&quot;:0.6,
- &quot;reproductivity&quot;:8,
- &quot;up_align&quot;:0.6,
- &quot;plant_into_soil&quot;:0.02,
- &quot;hygrophile&quot;:-0.15
+ <span class="hljs-string">&quot;unreal_instance&quot;</span>:<span class="hljs-string">&quot;StaticMesh&apos;/Game/STF/Pack03-LandscapePro/Environment/Foliage/Grass/SM_GrassGroup01.SM_GrassGroup01&apos;&quot;</span>,
+ <span class="hljs-string">&quot;propagate_dist&quot;</span>:<span class="hljs-number">420.0</span>,
+ <span class="hljs-string">&quot;heliophile&quot;</span>:<span class="hljs-number">0.12</span>,
+ <span class="hljs-string">&quot;species&quot;</span>:<span class="hljs-string">&quot;VegA&quot;</span>,
+ <span class="hljs-string">&quot;viability&quot;</span>:<span class="hljs-number">0.9</span>,
+ <span class="hljs-string">&quot;viability_radius&quot;</span>:<span class="hljs-number">0.035</span>,
+ <span class="hljs-string">&quot;animal_spread_factor&quot;</span>:<span class="hljs-number">0.9</span>,
+ <span class="hljs-string">&quot;pioneer_order&quot;</span>:<span class="hljs-number">0</span>,
+ <span class="hljs-string">&quot;init_seed_weight&quot;</span>:<span class="hljs-number">0.6</span>,
+ <span class="hljs-string">&quot;reproductivity&quot;</span>:<span class="hljs-number">8</span>,
+ <span class="hljs-string">&quot;up_align&quot;</span>:<span class="hljs-number">0.6</span>,
+ <span class="hljs-string">&quot;plant_into_soil&quot;</span>:<span class="hljs-number">0.02</span>,
+ <span class="hljs-string">&quot;hygrophile&quot;</span>:<span class="hljs-number">-0.15</span>
 },
 {
- &quot;unreal_instance&quot;:&quot;StaticMesh&apos;/Game/STF/Pack03-LandscapePro/Environment/Foliage/Grass/SM_FlowerGroup01.SM_FlowerGroup01&apos;&quot;,
- &quot;species&quot;:&quot;VegB&quot;,
- &quot;propagate_dist&quot;:350.0,
- &quot;heliophile&quot;:0.1,
- &quot;viability&quot;:0.85,
- &quot;viability_radius&quot;:0.15,
- &quot;animal_spread_factor&quot;:0.6,
- &quot;pioneer_order&quot;:1,
- &quot;init_seed_weight&quot;:0.45,
- &quot;reproductivity&quot;:9,
- &quot;up_align&quot;:0.6,
- &quot;plant_into_soil&quot;:0.015,
- &quot;hygrophile&quot;:0.5
+ <span class="hljs-string">&quot;unreal_instance&quot;</span>:<span class="hljs-string">&quot;StaticMesh&apos;/Game/STF/Pack03-LandscapePro/Environment/Foliage/Grass/SM_FlowerGroup01.SM_FlowerGroup01&apos;&quot;</span>,
+ <span class="hljs-string">&quot;species&quot;</span>:<span class="hljs-string">&quot;VegB&quot;</span>,
+ <span class="hljs-string">&quot;propagate_dist&quot;</span>:<span class="hljs-number">350.0</span>,
+ <span class="hljs-string">&quot;heliophile&quot;</span>:<span class="hljs-number">0.1</span>,
+ <span class="hljs-string">&quot;viability&quot;</span>:<span class="hljs-number">0.85</span>,
+ <span class="hljs-string">&quot;viability_radius&quot;</span>:<span class="hljs-number">0.15</span>,
+ <span class="hljs-string">&quot;animal_spread_factor&quot;</span>:<span class="hljs-number">0.6</span>,
+ <span class="hljs-string">&quot;pioneer_order&quot;</span>:<span class="hljs-number">1</span>,
+ <span class="hljs-string">&quot;init_seed_weight&quot;</span>:<span class="hljs-number">0.45</span>,
+ <span class="hljs-string">&quot;reproductivity&quot;</span>:<span class="hljs-number">9</span>,
+ <span class="hljs-string">&quot;up_align&quot;</span>:<span class="hljs-number">0.6</span>,
+ <span class="hljs-string">&quot;plant_into_soil&quot;</span>:<span class="hljs-number">0.015</span>,
+ <span class="hljs-string">&quot;hygrophile&quot;</span>:<span class="hljs-number">0.5</span>
 },
 {
- &quot;unreal_instance&quot;:&quot;StaticMesh&apos;/Game/STF/Pack03-LandscapePro/Environment/Foliage/Grass/SM_WeathGroup02.SM_WeathGroup02&apos;&quot;,
- &quot;species&quot;:&quot;VegC&quot;,
- &quot;propagate_dist&quot;:300.0,
- &quot;heliophile&quot;:0.1,
- &quot;viability&quot;:0.8,
- &quot;viability_radius&quot;:0.3,
- &quot;animal_spread_factor&quot;:0.5,
- &quot;pioneer_order&quot;:2,
- &quot;init_seed_weight&quot;:0.5,
- &quot;reproductivity&quot;:6,
- &quot;up_align&quot;:0.3,
- &quot;plant_into_soil&quot;:0.025,
- &quot;hygrophile&quot;:-0.2
+ <span class="hljs-string">&quot;unreal_instance&quot;</span>:<span class="hljs-string">&quot;StaticMesh&apos;/Game/STF/Pack03-LandscapePro/Environment/Foliage/Grass/SM_WeathGroup02.SM_WeathGroup02&apos;&quot;</span>,
+ <span class="hljs-string">&quot;species&quot;</span>:<span class="hljs-string">&quot;VegC&quot;</span>,
+ <span class="hljs-string">&quot;propagate_dist&quot;</span>:<span class="hljs-number">300.0</span>,
+ <span class="hljs-string">&quot;heliophile&quot;</span>:<span class="hljs-number">0.1</span>,
+ <span class="hljs-string">&quot;viability&quot;</span>:<span class="hljs-number">0.8</span>,
+ <span class="hljs-string">&quot;viability_radius&quot;</span>:<span class="hljs-number">0.3</span>,
+ <span class="hljs-string">&quot;animal_spread_factor&quot;</span>:<span class="hljs-number">0.5</span>,
+ <span class="hljs-string">&quot;pioneer_order&quot;</span>:<span class="hljs-number">2</span>,
+ <span class="hljs-string">&quot;init_seed_weight&quot;</span>:<span class="hljs-number">0.5</span>,
+ <span class="hljs-string">&quot;reproductivity&quot;</span>:<span class="hljs-number">6</span>,
+ <span class="hljs-string">&quot;up_align&quot;</span>:<span class="hljs-number">0.3</span>,
+ <span class="hljs-string">&quot;plant_into_soil&quot;</span>:<span class="hljs-number">0.025</span>,
+ <span class="hljs-string">&quot;hygrophile&quot;</span>:<span class="hljs-number">-0.2</span>
 }
 ]
-</code></pre>&#x7528;&#x6237;&#x53EF;&#x9009;&#x62E9;Point&#x548C;Primitive&#x4E24;&#x79CD;&#x51E0;&#x4F55;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#xFF0C;&#x6B64;&#x8282;&#x70B9;&#x4F1A;&#x5C06;&#x89E3;&#x6790;&#x5C5E;&#x6027;&#x8F93;&#x51FA;&#x5230;&#x7528;&#x6237;&#x9009;&#x62E9;&#x7684;&#x51E0;&#x4F55;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x4E2D;&#x3002;<h2 id="dolag-divide-points-by-weight">Dolag Divide Points By Weight</h2>
+</code></pre>
+&#x7528;&#x6237;&#x53EF;&#x9009;&#x62E9;Point&#x548C;Primitive&#x4E24;&#x79CD;&#x51E0;&#x4F55;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#xFF0C;&#x6B64;&#x8282;&#x70B9;&#x4F1A;&#x5C06;&#x89E3;&#x6790;&#x5C5E;&#x6027;&#x8F93;&#x51FA;&#x5230;&#x7528;&#x6237;&#x9009;&#x62E9;&#x7684;&#x51E0;&#x4F55;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x4E2D;&#x3002;<h2 id="dolag-divide-points-by-weight">Dolag Divide Points By Weight</h2>
 &#x6B64;&#x8282;&#x70B9;&#x6709;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x662F;&#x5F85;&#x5212;&#x5206;&#x7684;&#x70B9;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x8F93;&#x5165;&#x662F;&#x7528;&#x6765;&#x5212;&#x5206;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E0E;[[Dolag Parse Json Data To Gemotry]]&#x642D;&#x914D;&#x6709;&#x5947;&#x6548;&#x3002;
 &#x8282;&#x70B9;&#x8981;&#x6C42;&#x7B2C;&#x4E8C;&#x4E2A;&#x8F93;&#x5165;&#x5305;&#x542B;&#x7528;&#x4EE5;&#x5212;&#x5206;&#x7684;&#x5143;&#x4FE1;&#x606F;&#xFF1A;</li>
 </ol>
@@ -373,7 +387,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Houdini节点","level":"1.3.1","depth":2,"next":{"title":"快速命令","level":"1.3.2","depth":2,"path":"Feature/Fast Console.md","ref":"Feature/Fast Console.md","articles":[]},"previous":{"title":"功能","level":"1.3","depth":1,"ref":"","articles":[{"title":"Houdini节点","level":"1.3.1","depth":2,"path":"Feature/HDA&Otls.md","ref":"Feature/HDA&Otls.md","articles":[]},{"title":"快速命令","level":"1.3.2","depth":2,"path":"Feature/Fast Console.md","ref":"Feature/Fast Console.md","articles":[]},{"title":"菜单","level":"1.3.3","depth":2,"ref":"","articles":[{"title":"主菜单","level":"1.3.3.1","depth":3,"path":"Feature/Main Menu.md","ref":"Feature/Main Menu.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Feature/HDA&Otls.md","mtime":"2022-06-04T10:29:05.312Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-04T10:41:21.325Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Houdini节点","level":"1.3.1","depth":2,"next":{"title":"快速命令","level":"1.3.2","depth":2,"path":"Feature/Fast Console.md","ref":"Feature/Fast Console.md","articles":[]},"previous":{"title":"功能","level":"1.3","depth":1,"ref":"","articles":[{"title":"Houdini节点","level":"1.3.1","depth":2,"path":"Feature/HDA&Otls.md","ref":"Feature/HDA&Otls.md","articles":[]},{"title":"快速命令","level":"1.3.2","depth":2,"path":"Feature/Fast Console.md","ref":"Feature/Fast Console.md","articles":[]},{"title":"代码库","level":"1.3.3","depth":2,"path":"Feature/Header&Module","ref":"Feature/Header&Module","articles":[]},{"title":"菜单","level":"1.3.4","depth":2,"ref":"","articles":[{"title":"主菜单","level":"1.3.4.1","depth":3,"path":"Feature/Main Menu.md","ref":"Feature/Main Menu.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Feature/HDA&Otls.md","mtime":"2022-06-04T11:33:39.570Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-04T13:22:10.836Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

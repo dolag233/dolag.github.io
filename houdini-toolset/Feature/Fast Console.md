@@ -13,7 +13,7 @@ Houdini的Tab菜单可搜索并创建节点，而自定义节点创建命令的�
 如果我们要创建一个节点命令，可以在此json文件的列表尾部添加键值对，其中“node_name”表示此节点的名称(在houdini中显示节点信息窗口的右上角会显示节点名称)，“item_name”表示在快速命令列表中显示和搜索的名称，“alias”表示此命令的别名，而“important”决定了此命令是否重要，重要节点会优先显示。
 下列代码展示了如何添加一个subdivide节点的快捷命令。
 
-```
+```json
 [
   {
     ...
@@ -57,7 +57,7 @@ context参数是快速命令框架传入的ConsoleContext类型的参数，可�
 
 在完成了ConsoleItem的实例化后，将其插入到DolagPlugin/scripts/console/ConsoleItemCustom.py中的CUSTOM_ITEMS变量中——快速命令工具会读取此变量将其中的每一项都加入到快速命令列表中。
 例如，在DolagPlugin/scripts/console/ConsoleItemCustom.py尾部插入如下语句，即可添加自定义命令。
-```
+```python
 from Dolag import utils as du
 ...
 

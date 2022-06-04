@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="Header&Module" />
+    
     
     <link rel="prev" href="HDA&Otls.html" />
     
@@ -172,7 +174,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" >
+        <li class="chapter " data-level="1.3.3" data-path="Header&Module">
+            
+                <span>
+            
+                    
+                    代码库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" >
             
                 <span>
             
@@ -186,7 +201,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.3.1" data-path="Main Menu.html">
+        <li class="chapter " data-level="1.3.4.1" data-path="Main Menu.html">
             
                 <a href="Main Menu.html">
             
@@ -267,7 +282,7 @@ Houdini&#x7684;Tab&#x83DC;&#x5355;&#x53EF;&#x641C;&#x7D22;&#x5E76;&#x521B;&#x5EF
 &#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x547D;&#x4EE4;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6B64;json&#x6587;&#x4EF6;&#x7684;&#x5217;&#x8868;&#x5C3E;&#x90E8;&#x6DFB;&#x52A0;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x5176;&#x4E2D;&#x201C;node_name&#x201D;&#x8868;&#x793A;&#x6B64;&#x8282;&#x70B9;&#x7684;&#x540D;&#x79F0;(&#x5728;houdini&#x4E2D;&#x663E;&#x793A;&#x8282;&#x70B9;&#x4FE1;&#x606F;&#x7A97;&#x53E3;&#x7684;&#x53F3;&#x4E0A;&#x89D2;&#x4F1A;&#x663E;&#x793A;&#x8282;&#x70B9;&#x540D;&#x79F0;)&#xFF0C;&#x201C;item_name&#x201D;&#x8868;&#x793A;&#x5728;&#x5FEB;&#x901F;&#x547D;&#x4EE4;&#x5217;&#x8868;&#x4E2D;&#x663E;&#x793A;&#x548C;&#x641C;&#x7D22;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x201C;alias&#x201D;&#x8868;&#x793A;&#x6B64;&#x547D;&#x4EE4;&#x7684;&#x522B;&#x540D;&#xFF0C;&#x800C;&#x201C;important&#x201D;&#x51B3;&#x5B9A;&#x4E86;&#x6B64;&#x547D;&#x4EE4;&#x662F;&#x5426;&#x91CD;&#x8981;&#xFF0C;&#x91CD;&#x8981;&#x8282;&#x70B9;&#x4F1A;&#x4F18;&#x5148;&#x663E;&#x793A;&#x3002;
 &#x4E0B;&#x5217;&#x4EE3;&#x7801;&#x5C55;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;subdivide&#x8282;&#x70B9;&#x7684;&#x5FEB;&#x6377;&#x547D;&#x4EE4;&#x3002;</li>
 </ul>
-<pre><code>[
+<pre><code class="lang-json">[
   {
     ...
   },
@@ -278,13 +293,14 @@ Houdini&#x7684;Tab&#x83DC;&#x5355;&#x53EF;&#x641C;&#x7D22;&#x5E76;&#x521B;&#x5EF
     ...
   },
   {
-    &quot;item_name&quot;: &quot;Subdivide&quot;,
-    &quot;alias&quot;: &quot;sd&quot;,
-    &quot;important&quot;: true,
-    &quot;node_name&quot;: &quot;subdivide&quot;
+    <span class="hljs-string">&quot;item_name&quot;</span>: <span class="hljs-string">&quot;Subdivide&quot;</span>,
+    <span class="hljs-string">&quot;alias&quot;</span>: <span class="hljs-string">&quot;sd&quot;</span>,
+    <span class="hljs-string">&quot;important&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">&quot;node_name&quot;</span>: <span class="hljs-string">&quot;subdivide&quot;</span>
   }
 ]
-</code></pre><h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x4EFB;&#x4F55;&#x547D;&#x4EE4;">&#x81EA;&#x5B9A;&#x4E49;&#x4EFB;&#x4F55;&#x547D;&#x4EE4;</h2>
+</code></pre>
+<h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x4EFB;&#x4F55;&#x547D;&#x4EE4;">&#x81EA;&#x5B9A;&#x4E49;&#x4EFB;&#x4F55;&#x547D;&#x4EE4;</h2>
 <p>&#x5FEB;&#x901F;&#x547D;&#x4EE4;&#x5DE5;&#x5177;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x80FD;&#x5B8C;&#x5168;&#x81EA;&#x5B9A;&#x4E49;&#x4EFB;&#x4F55;&#x547D;&#x4EE4;&#x7684;&#x6846;&#x67B6;&#x3002;&#x5728;&#x6B64;&#x4E4B;&#x524D;&#x5148;&#x8C08;&#x4E00;&#x4E0B;&#x539F;&#x7406;&#x3002;
 &#x5FEB;&#x901F;&#x547D;&#x4EE4;&#x5DE5;&#x5177;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x90FD;&#x662F;ConsoleItem&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5FEB;&#x901F;&#x547D;&#x4EE4;&#x5DE5;&#x5177;&#x4F1A;&#x8BFB;&#x53D6;&#x6BCF;&#x4E00;&#x4E2A;ConsoleItem&#x5B9E;&#x4F8B;&#x7684;&#x547D;&#x4EE4;&#x540D;&#x79F0;&#x3001;&#x522B;&#x540D;&#x3001;&#x91CD;&#x8981;&#x4E0E;&#x5426;&#xFF0C;&#x5728;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x65F6;&#x8C03;&#x7528;&#x5B9E;&#x4F8B;&#x7684;run&#x51FD;&#x6570;&#xFF0C;&#x5176;&#x4E2D;ConsoleItem&#x7C7B;&#x7684;&#x5B9A;&#x4E49;&#x5728;DolagPlugin/scripts/console/ConsoleItem.py&#x4E2D;&#x3002;
 &#x56E0;&#x6B64;&#x60F3;&#x8981;&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x547D;&#x4EE4;&#x5C31;&#x9700;&#x8981;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;ConsoleItem&#x5B9E;&#x4F8B;&#x3002;
@@ -306,17 +322,18 @@ ConsoleItem&#x7C7B;&#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;&#x7B7E;&#x540D;&#x59
 </ul>
 <p>&#x5728;&#x5B8C;&#x6210;&#x4E86;ConsoleItem&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x540E;&#xFF0C;&#x5C06;&#x5176;&#x63D2;&#x5165;&#x5230;DolagPlugin/scripts/console/ConsoleItemCustom.py&#x4E2D;&#x7684;CUSTOM_ITEMS&#x53D8;&#x91CF;&#x4E2D;&#x2014;&#x2014;&#x5FEB;&#x901F;&#x547D;&#x4EE4;&#x5DE5;&#x5177;&#x4F1A;&#x8BFB;&#x53D6;&#x6B64;&#x53D8;&#x91CF;&#x5C06;&#x5176;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x90FD;&#x52A0;&#x5165;&#x5230;&#x5FEB;&#x901F;&#x547D;&#x4EE4;&#x5217;&#x8868;&#x4E2D;&#x3002;
 &#x4F8B;&#x5982;&#xFF0C;&#x5728;DolagPlugin/scripts/console/ConsoleItemCustom.py&#x5C3E;&#x90E8;&#x63D2;&#x5165;&#x5982;&#x4E0B;&#x8BED;&#x53E5;&#xFF0C;&#x5373;&#x53EF;&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x547D;&#x4EE4;&#x3002;</p>
-<pre><code>from Dolag import utils as du
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> Dolag <span class="hljs-keyword">import</span> utils <span class="hljs-keyword">as</span> du
 ...
 
-def copy_node_path_cb(context):  
-    nodes = context[&quot;selected_nodes&quot;]  
-    if nodes:  
-        du.writeClipboard(nodes[0].path())  
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">copy_node_path_cb</span><span class="hljs-params">(context)</span>:</span>  
+    nodes = context[<span class="hljs-string">&quot;selected_nodes&quot;</span>]  
+    <span class="hljs-keyword">if</span> nodes:  
+        du.writeClipboard(nodes[<span class="hljs-number">0</span>].path())  
 
-create_python_shell = ConsoleItem(item_name=&quot;Copy Node Path&quot;, alias=&quot;np&quot;, callback=copy_node_path_cb)  
+create_python_shell = ConsoleItem(item_name=<span class="hljs-string">&quot;Copy Node Path&quot;</span>, alias=<span class="hljs-string">&quot;np&quot;</span>, callback=copy_node_path_cb)  
 CUSTOM_ITEMS.append(create_python_shell)
 </code></pre>
+
                                 
                                 </section>
                             
@@ -343,10 +360,14 @@ CUSTOM_ITEMS.append(create_python_shell)
 
             
                 
-                <a href="HDA&Otls.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Houdini节点">
+                <a href="HDA&Otls.html" class="navigation navigation-prev " aria-label="Previous page: Houdini节点">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="Header&Module" class="navigation navigation-next " aria-label="Next page: 代码库">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -355,7 +376,7 @@ CUSTOM_ITEMS.append(create_python_shell)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"快速命令","level":"1.3.2","depth":2,"next":{"title":"菜单","level":"1.3.3","depth":2,"ref":"","articles":[{"title":"主菜单","level":"1.3.3.1","depth":3,"path":"Feature/Main Menu.md","ref":"Feature/Main Menu.md","articles":[]}]},"previous":{"title":"Houdini节点","level":"1.3.1","depth":2,"path":"Feature/HDA&Otls.md","ref":"Feature/HDA&Otls.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Feature/Fast Console.md","mtime":"2022-06-04T09:39:22.992Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-04T10:41:21.325Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"快速命令","level":"1.3.2","depth":2,"next":{"title":"代码库","level":"1.3.3","depth":2,"path":"Feature/Header&Module","ref":"Feature/Header&Module","articles":[]},"previous":{"title":"Houdini节点","level":"1.3.1","depth":2,"path":"Feature/HDA&Otls.md","ref":"Feature/HDA&Otls.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Feature/Fast Console.md","mtime":"2022-06-04T11:33:50.887Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-04T13:22:10.836Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
