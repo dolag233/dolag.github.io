@@ -1,0 +1,412 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Houdini节点 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Fast Console.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    安装配置
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Install&Config/install.html">
+            
+                <a href="../Install&Config/install.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    功能
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="HDA&Otls.html">
+            
+                <a href="HDA&Otls.html">
+            
+                    
+                    Houdini节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="Fast Console.html">
+            
+                <a href="Fast Console.html">
+            
+                    
+                    快速命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" >
+            
+                <span>
+            
+                    
+                    菜单
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="Main Menu.html">
+            
+                <a href="Main Menu.html">
+            
+                    
+                    主菜单
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Houdini节点</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h1>
+<p>&#x672C;&#x5DE5;&#x5177;&#x96C6;&#x63D0;&#x4F9B;&#x4E86;&#x5206;&#x95E8;&#x522B;&#x7C7B;&#x7684;Houdini&#x8D44;&#x4EA7;&#xFF0C;&#x9ED8;&#x8BA4;&#x5168;&#x5C40;&#x5B89;&#x88C5;&#xFF0C;&#x53EF;&#x4EE5;&#x4EE5;&#x8282;&#x70B9;&#x7684;&#x5F62;&#x5F0F;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x3002;</p>
+<ul>
+<li>&#x8FD9;&#x4E9B;&#x8D44;&#x4EA7;&#x90FD;&#x653E;&#x7F6E;&#x5728;DolagPlugin/otls&#x5185;</li>
+<li>&#x8D44;&#x4EA7;&#x540D;&#x79F0;&#x4EE5;Dolag&#x5F00;&#x5934;&#x3002;</li>
+<li>&#x8FD9;&#x4E9B;&#x8D44;&#x4EA7;&#x5728;Tab&#x83DC;&#x5355;&#x4E2D;&#x7684;Dolag&#x5206;&#x7C7B;&#x5185;&#xFF0C;&#x5E76;&#x5206;&#x4E3A;&#x4E86;&#x5982;&#x4E0B;&#x56DB;&#x7C7B;&#xFF1A;<ol>
+<li>Attribute&#xFF1A;&#x548C;&#x5C5E;&#x6027;&#x76F8;&#x5173;&#x7684;&#x8282;&#x70B9;</li>
+<li>Heightfield&#xFF1A;&#x548C;&#x5730;&#x5F62;&#x76F8;&#x5173;&#x8282;&#x70B9;</li>
+<li>Polygon&#xFF1A;&#x5BF9;Polygon&#x8FDB;&#x884C;&#x5904;&#x7406;&#x7684;&#x8282;&#x70B9;</li>
+<li>Primitive&#xFF1A;&#x751F;&#x6210;&#x6A21;&#x578B;&#x7684;&#x8282;&#x70B9;</li>
+<li>Utility&#xFF1A;&#x5176;&#x4ED6;&#x529F;&#x80FD;&#x6027;&#x8282;&#x70B9;
+&#x7531;&#x4E8E;&#x8282;&#x70B9;&#x6570;&#x76EE;&#x9887;&#x591A;&#xFF0C;&#x4EC5;&#x6311;&#x9009;&#x5FC5;&#x8981;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#x3002;<h1 id="&#x8282;&#x70B9;&#x8BF4;&#x660E;">&#x8282;&#x70B9;&#x8BF4;&#x660E;</h1>
+<h2 id="dolag-parse-json-data-to-gemotry">Dolag Parse Json Data To Gemotry</h2>
+&#x7528;&#x6765;&#x89E3;&#x6790;&#x7B80;&#x5355;&#x7ED3;&#x6784;&#x7684;json&#x6570;&#x636E;&#x3002;
+&#x7531;&#x4E8E;&#x51E0;&#x4F55;&#x4F53;&#x627F;&#x8F7D;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6709;&#x9650;&#xFF0C;&#x4EE5;&#x53CA;json&#x6570;&#x636E;&#x5D4C;&#x5957;&#x7684;&#x590D;&#x6742;&#x6027;&#xFF0C;&#x672C;&#x8282;&#x70B9;&#x53EA;&#x652F;&#x6301;&#x7531;&#x5B57;&#x5178;&#x7EC4;&#x6210;&#x7684;&#x5217;&#x8868;&#x5F62;&#x5F0F;&#x7684;json&#x89E3;&#x6790;&#x3002;&#x5982;&#x4E0B;&#xFF1A;<pre><code>[
+{
+ &quot;unreal_instance&quot;:&quot;StaticMesh&apos;/Game/STF/Pack03-LandscapePro/Environment/Foliage/Grass/SM_GrassGroup01.SM_GrassGroup01&apos;&quot;,
+ &quot;propagate_dist&quot;:420.0,
+ &quot;heliophile&quot;:0.12,
+ &quot;species&quot;:&quot;VegA&quot;,
+ &quot;viability&quot;:0.9,
+ &quot;viability_radius&quot;:0.035,
+ &quot;animal_spread_factor&quot;:0.9,
+ &quot;pioneer_order&quot;:0,
+ &quot;init_seed_weight&quot;:0.6,
+ &quot;reproductivity&quot;:8,
+ &quot;up_align&quot;:0.6,
+ &quot;plant_into_soil&quot;:0.02,
+ &quot;hygrophile&quot;:-0.15
+},
+{
+ &quot;unreal_instance&quot;:&quot;StaticMesh&apos;/Game/STF/Pack03-LandscapePro/Environment/Foliage/Grass/SM_FlowerGroup01.SM_FlowerGroup01&apos;&quot;,
+ &quot;species&quot;:&quot;VegB&quot;,
+ &quot;propagate_dist&quot;:350.0,
+ &quot;heliophile&quot;:0.1,
+ &quot;viability&quot;:0.85,
+ &quot;viability_radius&quot;:0.15,
+ &quot;animal_spread_factor&quot;:0.6,
+ &quot;pioneer_order&quot;:1,
+ &quot;init_seed_weight&quot;:0.45,
+ &quot;reproductivity&quot;:9,
+ &quot;up_align&quot;:0.6,
+ &quot;plant_into_soil&quot;:0.015,
+ &quot;hygrophile&quot;:0.5
+},
+{
+ &quot;unreal_instance&quot;:&quot;StaticMesh&apos;/Game/STF/Pack03-LandscapePro/Environment/Foliage/Grass/SM_WeathGroup02.SM_WeathGroup02&apos;&quot;,
+ &quot;species&quot;:&quot;VegC&quot;,
+ &quot;propagate_dist&quot;:300.0,
+ &quot;heliophile&quot;:0.1,
+ &quot;viability&quot;:0.8,
+ &quot;viability_radius&quot;:0.3,
+ &quot;animal_spread_factor&quot;:0.5,
+ &quot;pioneer_order&quot;:2,
+ &quot;init_seed_weight&quot;:0.5,
+ &quot;reproductivity&quot;:6,
+ &quot;up_align&quot;:0.3,
+ &quot;plant_into_soil&quot;:0.025,
+ &quot;hygrophile&quot;:-0.2
+}
+]
+</code></pre>&#x7528;&#x6237;&#x53EF;&#x9009;&#x62E9;Point&#x548C;Primitive&#x4E24;&#x79CD;&#x51E0;&#x4F55;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#xFF0C;&#x6B64;&#x8282;&#x70B9;&#x4F1A;&#x5C06;&#x89E3;&#x6790;&#x5C5E;&#x6027;&#x8F93;&#x51FA;&#x5230;&#x7528;&#x6237;&#x9009;&#x62E9;&#x7684;&#x51E0;&#x4F55;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x4E2D;&#x3002;<h2 id="dolag-divide-points-by-weight">Dolag Divide Points By Weight</h2>
+&#x6B64;&#x8282;&#x70B9;&#x6709;&#x4E24;&#x4E2A;&#x8F93;&#x5165;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x662F;&#x5F85;&#x5212;&#x5206;&#x7684;&#x70B9;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x8F93;&#x5165;&#x662F;&#x7528;&#x6765;&#x5212;&#x5206;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E0E;[[Dolag Parse Json Data To Gemotry]]&#x642D;&#x914D;&#x6709;&#x5947;&#x6548;&#x3002;
+&#x8282;&#x70B9;&#x8981;&#x6C42;&#x7B2C;&#x4E8C;&#x4E2A;&#x8F93;&#x5165;&#x5305;&#x542B;&#x7528;&#x4EE5;&#x5212;&#x5206;&#x7684;&#x5143;&#x4FE1;&#x606F;&#xFF1A;</li>
+</ol>
+</li>
+<li>&#x8282;&#x70B9;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x8981;&#x8BFB;&#x53D6;&#x7684;&#x51E0;&#x4F55;&#x5143;&#x7D20;&#x7C7B;&#x578B;(Point&#x548C;Primitive)&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x8F93;&#x5165;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5BF9;&#x5E94;&#x51E0;&#x4F55;&#x5143;&#x7D20;&#x90FD;&#x4EE3;&#x8868;&#x4E86;&#x4E00;&#x4E2A;&#x5212;&#x5206;</li>
+<li>&#x6BCF;&#x4E2A;&#x5212;&#x5206;&#x90FD;&#x9700;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x6765;&#x8868;&#x793A;&#x8BE5;&#x5212;&#x5206;&#x7684;&#x6743;&#x91CD;&#xFF0C;&#x8282;&#x70B9;&#x7684;Weight Attribute&#x53C2;&#x6570;&#x63A7;&#x5236;&#x8FD9;&#x4E00;&#x5C5E;&#x6027;</li>
+<li>&#x5BF9;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x5212;&#x5206;&#x7ED3;&#x679C;&#x9700;&#x8981;&#x7528;&#x7C7B;&#x540D;&#x6765;&#x6807;&#x8BC6;&#x3002;&#x5982;&#x679C;&#x7B2C;&#x4E8C;&#x4E2A;&#x8F93;&#x5165;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5212;&#x5206;&#x90FD;&#x6709;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x6807;&#x8BC6;&#x7684;&#x7C7B;&#x540D;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x5C06;&#x6B64;&#x7C7B;&#x540D;&#x4F5C;&#x4E3A;&#x5212;&#x5206;&#x7ED3;&#x679C;&#x7684;&#x7C7B;&#x540D;&#x3002;
+&#x4F8B;&#x5982;&#x7B2C;&#x4E8C;&#x4E2A;&#x8F93;&#x5165;&#x6709;&#x7C7B;&#x540D;&#x5206;&#x522B;&#x4E3A;Tree&#x3001;Flower&#xFF0C;&#x6743;&#x91CD;&#x5206;&#x522B;&#x4E3A;0.1&#x3001;0.9&#x7684;&#x5212;&#x5206;&#xFF0C;&#x5176;&#x4E2D;&#x7C7B;&#x540D;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x4E3A;foliage<em>name&#xFF0C;&#x5219;&#x5212;&#x5206;&#x7684;&#x7ED3;&#x679C;&#x4E5F;&#x4F1A;&#x4EE5;foliage_name&#x4E3A;&#x7C7B;&#x5C5E;&#x6027;&#x540D;&#x8FDB;&#x884C;&#x6807;&#x8BC6;&#xFF0C;&#x5305;&#x542B;Tree&#x548C;Flower&#x4E24;&#x79CD;&#x5212;&#x5206;&#x3002;
+&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x4F7F;&#x7528;&#x7B2C;&#x4E8C;&#x4E2A;&#x8F93;&#x5165;&#x7684;&#x7C7B;&#x540D;&#x4F5C;&#x4E3A;&#x5212;&#x5206;&#x7684;&#x7C7B;&#x540D;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8282;&#x70B9;&#x7684;New Class Name&#x548C;Class Prefix&#x6765;&#x5206;&#x522B;&#x8BBE;&#x7F6E;&#x5212;&#x5206;&#x7C7B;&#x522B;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x548C;&#x7C7B;&#x540D;&#x7684;&#x524D;&#x7F00;&#x3002;
+&#x4F8B;&#x5982;&#x5F53;New Class Name&#x4E3A;class&#xFF0C;Class Prefix&#x4E3A;pile</em>&#x65F6;&#xFF0C;&#x5212;&#x5206;&#x540E;&#x70B9;&#x5C5E;&#x6027;&#x53EF;&#x80FD;&#x4E3A;&#xFF1A;<ul>
+<li>&#x70B9;1&#xFF1A;class&#xFF1A;pile_0</li>
+<li>&#x70B9;2&#xFF1A;class&#xFF1A;pile_3</li>
+<li>&#x70B9;3&#xFF1A;class&#xFF1A;pile_2</li>
+<li>&#x70B9;4&#xFF1A;class&#xFF1A;pile_0
+&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#xFF0C;&#x8FD9;&#x975E;&#x5E38;&#x65F6;&#x5019;&#x5C06;[[Dolag Parse Json Data To Gemotry]]&#x7684;&#x7ED3;&#x679C;&#x4F5C;&#x4E3A;&#x6B64;&#x8282;&#x70B9;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x8F93;&#x5165;&#x3002;</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="Fast Console.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 快速命令">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Houdini节点","level":"1.3.1","depth":2,"next":{"title":"快速命令","level":"1.3.2","depth":2,"path":"Feature/Fast Console.md","ref":"Feature/Fast Console.md","articles":[]},"previous":{"title":"功能","level":"1.3","depth":1,"ref":"","articles":[{"title":"Houdini节点","level":"1.3.1","depth":2,"path":"Feature/HDA&Otls.md","ref":"Feature/HDA&Otls.md","articles":[]},{"title":"快速命令","level":"1.3.2","depth":2,"path":"Feature/Fast Console.md","ref":"Feature/Fast Console.md","articles":[]},{"title":"菜单","level":"1.3.3","depth":2,"ref":"","articles":[{"title":"主菜单","level":"1.3.3.1","depth":3,"path":"Feature/Main Menu.md","ref":"Feature/Main Menu.md","articles":[]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Feature/HDA&Otls.md","mtime":"2022-06-04T10:29:05.312Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-06-04T10:41:21.325Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
