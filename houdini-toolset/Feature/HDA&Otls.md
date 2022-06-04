@@ -9,6 +9,7 @@
 	4. Primitive：生成模型的节点
 	5. Utility：其他功能性节点
 由于节点数目颇多，仅挑选必要节点进行说明。
+
 # 节点说明
 ## Dolag Parse Json Data To Gemotry
 用来解析简单结构的json数据。
@@ -63,6 +64,7 @@
 ]
 ```
 用户可选择Point和Primitive两种几何元素类型，此节点会将解析属性输出到用户选择的几何元素类型中。
+
 ## Dolag Divide Points By Weight
 此节点有两个输入，第一个输入是待划分的点，第二个输入是用来划分的数据，与[[Dolag Parse Json Data To Gemotry]]搭配有奇效。
 节点要求第二个输入包含用以划分的元信息：
