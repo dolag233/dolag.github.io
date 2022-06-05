@@ -14,6 +14,7 @@
 # 节点说明
 
 ## Dolag Parse Json Data To Gemotry
+<a id = "parse"></a>
 
 用来解析简单结构的json数据。
 由于几何体承载数据类型有限，以及json数据嵌套的复杂性，本节点只支持由字典组成的列表形式的json解析。如下：
@@ -82,4 +83,4 @@
    + 点2：class：pile_3
    + 点3：class：pile_2
    + 点4：class：pile_0
-显而易见的，这非常时候将[[Dolag Parse Json Data To Gemotry]]的结果作为此节点的第二个输入。
+显而易见的，这非常时候将[Dolag Parse Json Data To Geometry](#parse)的结果作为此节点的第二个输入。
