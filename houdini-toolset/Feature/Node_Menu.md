@@ -16,6 +16,30 @@
 
 在使用Copy Node Parms Reference后，在与原节点同类型的节点上可以使用Paste Node Parms Reference。使用后将原节点的所有变量作为引用赋予给此节点的所有变量。
 
+## Copy Node Shape
+
+拷贝节点的形状。
+
+## Paste Node Shape
+
+粘贴节点形状。同时作用于当前节点和选中的所有节点。
+
+## Copy Node Color
+
+拷贝节点的颜色。
+
+## Paste Node Color
+
+粘贴节点颜色。同时作用于当前节点和选中的所有节点。
+
+## Copy Node Style
+
+拷贝节点的形状和颜色。
+
+## Paste Node Style
+
+粘贴节点形状和颜色。同时作用于当前节点和选中的所有节点。
+
 ## Create Otl Alias
 
 复制该节点的hda，并且重命名，以类似达到别名的效果。

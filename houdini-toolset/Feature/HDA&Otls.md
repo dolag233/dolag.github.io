@@ -84,3 +84,16 @@
    + 点3：class：pile_2
    + 点4：class：pile_0
 显而易见的，这非常时候将[Dolag Parse Json Data To Geometry](#parse)的结果作为此节点的第二个输入。
+
+## Dolag Unreal Mesh Importer
+
+将静态网格的uasset转换为FBX并导入houdini。
+下为节点参数:
++ Unreal Path: 资产的ue工程所对应版本的unreal根目录。 例如 F:\Unreal Engine\UE_4.26
+
++ Unreal Project Path: 资产所在的unreal项目的项目文件。例如 F:\unreal_project\ProcedrualWorld.uproject
+
++ Asset Path: 静态网格资产在unreal项目中的路径，可以通过右键资产，选择“复制引用”来获取引用，获取引用后还需要删除两个单引号以及资产的类型。例如/Game/Quixel/Mesh/Rock_01.Rock_01;/Game/Quixel/Mesh/Rock_02.Rock_02
+
++ Output Path: FBX的导出路径。FBX文件会维持其在Unreal项目中的路径。例如，如果Output Path是 C:/tmp而Asset Path为/Game/Mesh/obj1.obj1，那么模型会导出为C:/tmp/Game/Mesh/obj1.FBX
+**注意，Unreal Project Path和Asset Path都不能包含空格和汉字**
