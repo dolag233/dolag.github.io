@@ -6,6 +6,6 @@
 
 # 目录
 
-## [Houdini Toolset文档](http://www.vis.dolag.work/houdini-toolset/)
+## [Houdini Toolset文档](http://www.vis.dolag.work/houdini-toolset/houdini-toolset/简介.html)
 
 Dolag houdini工具集的文档，源仓库地址[于此](https://github.com/dolag233/Doalg-Houdini-Toolset)。
