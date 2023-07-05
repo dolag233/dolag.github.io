@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>字体渲染中的“大小”</title>
+  <base href="../../">
+  <meta id="root-path" root-path="../../">
+
+  <link rel="icon" sizes="96x96" href="https://publish-01.obsidian.md/access/f786db9fac45774fa4f0d8112e232d67/favicon-96x96.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+  <meta charset="UTF-8">
+  <script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
+
+  <link rel="stylesheet" href="lib/styles/obsidian-styles.css">
+  <link rel="stylesheet" href="lib/styles/theme.css">
+  <link rel="stylesheet" href="lib/styles/plugin-styles.css">
+  <link rel="stylesheet" href="lib/styles/snippets.css">
+  <style> </style>
+
+
+  <!-- Graph View Data -->
+  <script>
+    let nodes = {
+      "nodeCount": 11,
+      "linkCount": 26,
+      "radii": [7, 6.888888888888889, 5.638888888888889, 5.638888888888889, 5.638888888888889, 5.638888888888889, 5.638888888888889, 5.638888888888889, 5.109375, 5.109375, 4.493055555555555],
+      "labels": ["index", "简介", "节点右键菜单", "变量右键菜单", "主菜单", "Houdini节点", "快速命令", "代码库", "字体渲染中的“大小”", "色彩空间、HDR和ACES", "安装"],
+      "paths": ["index.html", "houdini-toolset/简介.html", "houdini-toolset/功能/菜单功能/节点右键菜单.html", "houdini-toolset/功能/菜单功能/变量右键菜单.html", "houdini-toolset/功能/菜单功能/主菜单.html", "houdini-toolset/功能/houdini节点.html", "houdini-toolset/功能/快速命令.html", "houdini-toolset/功能/代码库.html", "笔记/图形图像/字体渲染中的“大小”.html", "笔记/图形图像/色彩空间、hdr和aces.html", "houdini-toolset/安装配置/安装.html"],
+      "linkSources": [1, 1, 1, 1, 1, 1, 1, 7, 6, 5, 4, 3, 2, 9, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "linkTargets": [10, 5, 6, 4, 2, 3, 7, 7, 6, 5, 4, 3, 2, 9, 8, 9, 8, 1, 10, 3, 2, 4, 7, 6, 5, 0]
+    };
+    let attractionForce = 1;
+    let linkLength = 10;
+    let repulsionForce = 150;
+    let centralForce = 3;
+    let edgePruning = 100;
+  </script>
+
+  <script type="module" src="lib/scripts/graph_view.js"></script>
+
+  <script src="lib/scripts/graph_wasm.js"></script>
+
+  <script src="lib/scripts/tinycolor.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js" integrity="sha512-Ch/O6kL8BqUwAfCF7Ie5SX1Hin+BJgYH4pNjRqXdTEqMsis1TUYg+j6nnI9uduPjGaj7DN4UKCZgpvoExt6dkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="lib/scripts/webpage.js"></script>
+
+</head>
+
+<body class="theme-dark mod-windows is-frameless is-hidden-frameless obsidian-app show-view-header is-maximized" style="--zoom-factor:1; --font-text-size:18px; --line-width:50em; --line-width-adaptive:50em; --file-line-width:50em; --content-width:500em; --sidebar-width:25em; --collapse-arrow-size:0.4em; --tree-horizontal-spacing:1em; --tree-vertical-spacing:0.5em; --sidebar-margin:12px;">
+  <div class="webpage-container">
+    <div class="sidebar-left sidebar">
+      <div class="sidebar-content">
+        <div><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle">
+            <div class="toggle-background"></div>
+          </label></div>
+        <div class="tree-container file-tree mod-nav-indicator" data-depth="0">
+          <div class="tree-header"><span class="sidebar-section-header">obsidian</span><button class="clickable-icon collapse-tree-button is-collapsed"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div>
+          <div class="tree-scroll-area">
+            <div class="tree-item mod-tree-folder mod-collapsible is-collapsed" data-depth="1">
+              <div class="tree-item-contents">
+                <div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div><a class="tree-item-link" href="笔记"><span class="tree-item-title">笔记</span></a>
+              </div>
+              <div class="tree-item-children">
+                <div class="tree-item mod-tree-folder mod-collapsible is-collapsed" data-depth="2">
+                  <div class="tree-item-contents">
+                    <div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg></div><a class="tree-item-link" href="笔记/图形图像"><span class="tree-item-title">图形图像</span></a>
+                  </div>
+                  <div class="tree-item-children">
+                    <div class="tree-item mod-tree-file" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="笔记/图形图像/色彩空间、hdr和aces.html"><span class="tree-item-title">色彩空间、HDR和ACES</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-file" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="笔记/图形图像/字体渲染中的“大小”.html"><span class="tree-item-title">字体渲染中的“大小”</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="document-container">
+      <div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings show-indentation-guide allow-fold-lists" style="tab-size: 4;" tabindex="-1">
+        <style id="MJX-CHTML-styles"></style>
+        <div class="markdown-preview-sizer markdown-preview-section" style="padding-bottom: ; padding-top: var(--file-margins); padding-right: var(--file-margins); padding-left: var(--file-margins); width: 100%; position: absolute;">
+          <div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+          <div class="mod-header">
+            <div class="inline-title" contenteditable="true" spellcheck="true" autocapitalize="on" tabindex="-1" enterkeyhint="done">字体渲染中的“大小”</div>
+          </div>
+          <div>
+            <h1 data-heading="一张图理解字体中的大小及其转换" id="一张图理解字体中的大小及其转换">一张图理解字体中的大小及其转换</h1>
+          </div>
+          <div>
+            <ul class="has-list-bullet">
+              <li data-line="0">
+                <div class="list-bullet"></div><a class="internal-link" data-href="#字体字形的单位度量" href="#字体字形的单位度量" target="_self" rel="noopener">字体字形的单位度量</a>
+              </li>
+              <li data-line="1">
+                <div class="list-bullet"></div><a class="internal-link" data-href="#光栅化后的字体大小度量" href="#光栅化后的字体大小度量" target="_self" rel="noopener">光栅化后的字体大小度量</a>
+              </li>
+              <li data-line="2">
+                <div class="list-bullet"></div><a class="internal-link" data-href="#两者的转换" href="#两者的转换" target="_self" rel="noopener">两者的转换</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p><span alt="Pasted image 20230705205508.png" src="Pasted image 20230705205508.png" class="internal-embed media-embed image-embed is-loaded"><img alt="Pasted image 20230705205508.png" src="lib\media\pasted-image-20230705205508.png"></span><br>
+              在研究ImGui的字体渲染方式时顺带研究了关于字体渲染中如何从字体字形的单位转换到渲染后的像素单位。每个字体渲染或排版引擎的实现方式不同，以下介绍是基于ImGui来讲述的，应该是相对正确的。</p>
+          </div>
+          <div>
+            <h2 data-heading="字体字形的单位度量" id="字体字形的单位度量" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>字体字形的单位度量
+            </h2>
+          </div>
+          <div>
+            <p>上图中，左下角为一个字形(Glyph)，字形带有Ascender和Descender属性，是拉丁字母中的升部位置和降部位置，在普通字体中一般代表了的字形可能达到的最高处和最低处，因此升部位置减去降部位置就可以得到字体的最大高度，在一些字体渲染中，以ImGui为例，假设字体大小处在以最大高度为边长的正方向内，因此就以升部位置减去降部位置作为字体大小的度量。此时，字体的度量单位为unit(我认为unit就是用来制作轮廓字体的最小单位)，因此这个大小也称为<font color="#f79646">UPM(Units Per eM</font>，欲知em为何物，请看后文)。</p>
+          </div>
+          <div>
+            <p>unit单位没有实际大小，你不能说100unit等于100英寸，这时需要我们对unit这个单位进行转换，转换为实际的大小。</p>
+          </div>
+          <div>
+            <h2 data-heading="光栅化后的字体大小度量" id="光栅化后的字体大小度量" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>光栅化后的字体大小度量
+            </h2>
+          </div>
+          <div>
+            <p>右上角部分为光栅化后，也就是渲染为像素后的文字，光栅化后的每个文字都会放入图中正方形框体中，这个框体称为<font color="#f79646">Em Square</font>，长宽定义为1 em。在以往使用金属活字的时候，一块正方形活字称为Em，其长宽就定义为1个em，em是一个相对的单位，需要用例如英寸这样实打实的单位来定义大小，而在金属活字中，一般用<font color="#f79646">点(Point, pt)</font>来度量Em的大小，例如上图右上角的等式中假设了这一个em大小为252pt。然而一个点的长度又是多少呢？点的长度定义可以说是五花八门的，比较普及的点为<font color="#f79646">美式点(American point)</font>，因此在计算机中常采用的，是接近美式点的<font color="#f79646">DTP 点</font>，一个DPT点大小为<font color="#f79646">72分之一英寸</font>，上图中的一个em为252个DPT pt，因此真实大小就是252/72英寸。获得了英寸单位的大小后，我们可以通过屏幕的<font color="#f79646">DPI(Dots Per Inch)</font>来计算出像素为单位的大小，正如其名，DPI的含义即为一英寸中的像素点个数，因此直接用DPI乘上英寸为单位的大小，就能得到像素为单位的大小(这里的大小也就是指Em Square的边长)，这个大小也称为PPM(Pixels Per Em)。</p>
+          </div>
+          <div>
+            <h2 data-heading="两者的转换" id="两者的转换" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>两者的转换
+            </h2>
+          </div>
+          <div>
+            <p>我们通过字体文件读取到的字体大小都是unit为单位的，而pixel为单位的光栅化后大小我们可以通过自定义或者用户规定的pt值来进行计算，两者之间只差一个系数，这个系数就是</p>
+          </div>
+          <div>
+            <center>UPM / PPM</center>
+          </div>
+          <div>
+            <p>这两者的值我们在前文都进行了求取，因此我们现在完成了从字体字形大小到光栅化后大小的转换。</p>
+          </div>
+          <div>
+            <p>(研究时间有些短，应该有不少舛错，请随意指正)</p>
+          </div>
+          <div>
+            <p>主要参考：<br>
+              <a rel="noopener" class="external-link" href="https://zh.wikipedia.org/wiki/%E9%BB%9E_(%E5%8D%B0%E5%88%B7)" target="_blank">https://zh.wikipedia.org/wiki/%E9%BB%9E_(%E5%8D%B0%E5%88%B7)</a><br>
+              <a rel="noopener" class="external-link" href="https://help.fontlab.com/fontlab-vi/Font-Sizes-and-the-Coordinate-System/" target="_blank">https://help.fontlab.com/fontlab-vi/Font-Sizes-and-the-Coordinate-System/</a>
+            </p>
+          </div>
+          <div class="mod-footer">
+            <div class="embedded-backlinks" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-right sidebar">
+      <div class="sidebar-content"><span class="sidebar-section-header">Interactive Graph</span>
+        <div class="graph-view-placeholder">
+          <div class="graph-view-container">
+            <div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-arrow-up-right">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg></div>
+            <canvas id="graph-canvas" width="512px" height="512px"></canvas>
+          </div>
+        </div>
+        <div class="tree-container outline-tree" data-depth="0">
+          <div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button is-collapsed"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div>
+          <div class="tree-scroll-area">
+            <div class="tree-item mod-tree-heading" data-depth="1">
+              <div class="tree-item-contents"><a class="tree-item-link" href="#一张图理解字体中的大小及其转换"><span class="tree-item-title">一张图理解字体中的大小及其转换</span></a></div>
+              <div class="tree-item-children">
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#字体字形的单位度量"><span class="tree-item-title">字体字形的单位度量</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#光栅化后的字体大小度量"><span class="tree-item-title">光栅化后的字体大小度量</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#两者的转换"><span class="tree-item-title">两者的转换</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

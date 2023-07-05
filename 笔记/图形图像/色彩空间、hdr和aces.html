@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>色彩空间、HDR和ACES</title>
+  <base href="../../">
+  <meta id="root-path" root-path="../../">
+
+  <link rel="icon" sizes="96x96" href="https://publish-01.obsidian.md/access/f786db9fac45774fa4f0d8112e232d67/favicon-96x96.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+  <meta charset="UTF-8">
+  <script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
+
+  <link rel="stylesheet" href="lib/styles/obsidian-styles.css">
+  <link rel="stylesheet" href="lib/styles/theme.css">
+  <link rel="stylesheet" href="lib/styles/plugin-styles.css">
+  <link rel="stylesheet" href="lib/styles/snippets.css">
+  <style> </style>
+
+
+  <!-- Graph View Data -->
+  <script>
+    let nodes = {
+      "nodeCount": 11,
+      "linkCount": 26,
+      "radii": [7, 6.888888888888889, 5.638888888888889, 5.638888888888889, 5.638888888888889, 5.638888888888889, 5.638888888888889, 5.638888888888889, 5.109375, 5.109375, 4.493055555555555],
+      "labels": ["index", "简介", "节点右键菜单", "变量右键菜单", "主菜单", "Houdini节点", "快速命令", "代码库", "字体渲染中的“大小”", "色彩空间、HDR和ACES", "安装"],
+      "paths": ["index.html", "houdini-toolset/简介.html", "houdini-toolset/功能/菜单功能/节点右键菜单.html", "houdini-toolset/功能/菜单功能/变量右键菜单.html", "houdini-toolset/功能/菜单功能/主菜单.html", "houdini-toolset/功能/houdini节点.html", "houdini-toolset/功能/快速命令.html", "houdini-toolset/功能/代码库.html", "笔记/图形图像/字体渲染中的“大小”.html", "笔记/图形图像/色彩空间、hdr和aces.html", "houdini-toolset/安装配置/安装.html"],
+      "linkSources": [1, 1, 1, 1, 1, 1, 1, 7, 6, 5, 4, 3, 2, 9, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      "linkTargets": [10, 5, 6, 4, 2, 3, 7, 7, 6, 5, 4, 3, 2, 9, 8, 9, 8, 1, 10, 3, 2, 4, 7, 6, 5, 0]
+    };
+    let attractionForce = 1;
+    let linkLength = 10;
+    let repulsionForce = 150;
+    let centralForce = 3;
+    let edgePruning = 100;
+  </script>
+
+  <script type="module" src="lib/scripts/graph_view.js"></script>
+
+  <script src="lib/scripts/graph_wasm.js"></script>
+
+  <script src="lib/scripts/tinycolor.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js" integrity="sha512-Ch/O6kL8BqUwAfCF7Ie5SX1Hin+BJgYH4pNjRqXdTEqMsis1TUYg+j6nnI9uduPjGaj7DN4UKCZgpvoExt6dkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="lib/scripts/webpage.js"></script>
+
+</head>
+
+<body class="theme-dark mod-windows is-frameless is-hidden-frameless obsidian-app show-view-header is-maximized" style="--zoom-factor:1; --font-text-size:18px; --line-width:50em; --line-width-adaptive:50em; --file-line-width:50em; --content-width:500em; --sidebar-width:25em; --collapse-arrow-size:0.4em; --tree-horizontal-spacing:1em; --tree-vertical-spacing:0.5em; --sidebar-margin:12px;">
+  <div class="webpage-container">
+    <div class="sidebar-left sidebar">
+      <div class="sidebar-content">
+        <div><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle">
+            <div class="toggle-background"></div>
+          </label></div>
+        <div class="tree-container file-tree mod-nav-indicator" data-depth="0">
+          <div class="tree-header"><span class="sidebar-section-header">obsidian</span><button class="clickable-icon collapse-tree-button is-collapsed"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div>
+          <div class="tree-scroll-area">
+            <div class="tree-item mod-tree-folder mod-collapsible is-collapsed" data-depth="1">
+              <div class="tree-item-contents">
+                <div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div><a class="tree-item-link" href="笔记"><span class="tree-item-title">笔记</span></a>
+              </div>
+              <div class="tree-item-children">
+                <div class="tree-item mod-tree-folder mod-collapsible is-collapsed" data-depth="2">
+                  <div class="tree-item-contents">
+                    <div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg></div><a class="tree-item-link" href="笔记/图形图像"><span class="tree-item-title">图形图像</span></a>
+                  </div>
+                  <div class="tree-item-children">
+                    <div class="tree-item mod-tree-file" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="笔记/图形图像/色彩空间、hdr和aces.html"><span class="tree-item-title">色彩空间、HDR和ACES</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-file" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="笔记/图形图像/字体渲染中的“大小”.html"><span class="tree-item-title">字体渲染中的“大小”</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="document-container">
+      <div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings show-indentation-guide allow-fold-lists" style="tab-size: 4;" tabindex="-1">
+        <style id="MJX-CHTML-styles"></style>
+        <div class="markdown-preview-sizer markdown-preview-section" style="padding-bottom: ; padding-top: var(--file-margins); padding-right: var(--file-margins); padding-left: var(--file-margins); width: 100%; position: absolute;">
+          <div class="markdown-preview-pusher" style="width: 1px; height: 0.1px; margin-bottom: 0px;"></div>
+          <div class="mod-header">
+            <div class="inline-title" contenteditable="true" spellcheck="true" autocapitalize="on" tabindex="-1" enterkeyhint="done">色彩空间、HDR和ACES</div>
+          </div>
+          <div>
+            <h1 data-heading="色彩空间、HDR和ACES" id="色彩空间、HDR和ACES">色彩空间、HDR和ACES</h1>
+          </div>
+          <div>
+            <ul class="has-list-bullet">
+              <li data-line="0">
+                <div class="list-bullet"></div><a class="internal-link" data-href="#色彩模型(Color Model)" href="#色彩模型(Color_Model)" target="_self" rel="noopener">色彩模型(Color Model)</a>
+              </li>
+              <li data-line="1">
+                <div class="list-bullet"></div>
+                <div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div><a class="internal-link" data-href="#色彩空间(Color Space)" href="#色彩空间(Color_Space)" target="_self" rel="noopener">色彩空间(Color Space)</a>
+                <ul class="has-list-bullet">
+                  <li data-line="2">
+                    <div class="list-bullet"></div><a class="internal-link" data-href="#CIE XYZ颜色空间" href="#CIE_XYZ颜色空间" target="_self" rel="noopener">CIE XYZ颜色空间</a><br>
+                    - <a class="internal-link" data-href="#DCI-P3" href="#DCI-P3" target="_self" rel="noopener">DCI-P3</a><br>
+                    - <a class="internal-link" data-href="#Display-P3" href="#Display-P3" target="_self" rel="noopener">Display-P3</a><br>
+                    - <a class="internal-link" data-href="#Rec.2020及P3-D65" href="#Rec.2020及P3-D65" target="_self" rel="noopener">Rec.2020及P3-D65</a>
+                  </li>
+                </ul>
+              </li>
+              <li data-line="6">
+                <div class="list-bullet"></div>
+                <div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                    <path d="M3 8L12 17L21 8"></path>
+                  </svg></div><a class="internal-link" data-href="#HDR(High Dynamic Range)" href="#HDR(High_Dynamic_Range)" target="_self" rel="noopener">HDR(High Dynamic Range)</a>
+                <ul class="has-list-bullet">
+                  <li data-line="7">
+                    <div class="list-bullet"></div><a class="internal-link" data-href="#传输函数(Transfer Function)" href="#传输函数(Transfer_Function)" target="_self" rel="noopener">传输函数(Transfer Function)</a>
+                  </li>
+                  <li data-line="8">
+                    <div class="list-bullet"></div>
+                    <div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg></div><a class="internal-link" data-href="#HDR和SDR之间的转换及显示过程中的颜色变换" href="#HDR和SDR之间的转换及显示过程中的颜色变换" target="_self" rel="noopener">HDR和SDR之间的转换及显示过程中的颜色变换</a>
+                    <ul class="has-list-bullet">
+                      <li data-line="9">
+                        <div class="list-bullet"></div><a class="internal-link" data-href="#颜色变换管线" href="#颜色变换管线" target="_self" rel="noopener">颜色变换管线</a>
+                      </li>
+                      <li data-line="10">
+                        <div class="list-bullet"></div><a class="internal-link" data-href="#Windows的颜色变换管线" href="#Windows的颜色变换管线" target="_self" rel="noopener">Windows的颜色变换管线</a>
+                      </li>
+                      <li data-line="11">
+                        <div class="list-bullet"></div>
+                        <div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                            <path d="M3 8L12 17L21 8"></path>
+                          </svg></div><a class="internal-link" data-href="#Windows的色彩显示流程" href="#Windows的色彩显示流程" target="_self" rel="noopener">Windows的色彩显示流程</a>
+                        <ul class="has-list-bullet">
+                          <li data-line="12">
+                            <div class="list-bullet"></div><a class="internal-link" data-href="#HDR" href="#HDR" target="_self" rel="noopener">HDR</a>
+                          </li>
+                          <li data-line="13">
+                            <div class="list-bullet"></div><a class="internal-link" data-href="#SDR" href="#SDR" target="_self" rel="noopener">SDR</a>
+                          </li>
+                          <li data-line="14">
+                            <div class="list-bullet"></div><a class="internal-link" data-href="#SDR since Windows 11 22H2" href="#SDR_since_Windows_11_22H2" target="_self" rel="noopener">SDR since Windows 11 22H2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li data-line="15">
+                        <div class="list-bullet"></div><a class="internal-link" data-href="#把游戏引擎渲染纳入考虑......" href="#把游戏引擎渲染纳入考虑......" target="_self" rel="noopener">把游戏引擎渲染纳入考虑......</a>
+                      </li>
+                      <li data-line="16">
+                        <div class="list-bullet"></div><a class="internal-link" data-href="#关于帧缓冲(Framebuffer)" href="#关于帧缓冲(Framebuffer)" target="_self" rel="noopener">关于帧缓冲(Framebuffer)</a>
+                      </li>
+                      <li data-line="17">
+                        <div class="list-bullet"></div><a class="internal-link" data-href="#色调映射(Tone Mapping)" href="#色调映射(Tone_Mapping)" target="_self" rel="noopener">色调映射(Tone Mapping)</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li data-line="18">
+                <div class="list-bullet"></div><a class="internal-link" data-href="#ACES(Academy Color Encoding System)流程" href="#ACES(Academy_Color_Encoding_System)流程" target="_self" rel="noopener">ACES(Academy Color Encoding System)流程</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 data-heading="色彩模型(Color Model)" id="色彩模型(Color_Model)" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>色彩模型(Color Model)
+            </h2>
+          </div>
+          <div>
+            <p>色彩模型规定了颜色能够被哪些分量(也就是原色)进行表示。举例来说RGB色彩模型下的颜色就可以用RGB三原色的数值来进行表示，比如存在一个颜色可以表示为[Red = 0.2, Green = 0.75, Blue = 0.13]。<br>
+              常见的色彩模型有RGB、CMYK、HSV、HSL等。</p>
+          </div>
+          <div>
+            <h2 data-heading="色彩空间(Color Space)" id="色彩空间(Color_Space)" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>色彩空间(Color Space)
+            </h2>
+          </div>
+          <div>
+            <p>色彩空间如其名，是颜色的空间。由于我们是进行设计、创作、游戏等，最终都会使用显示器、屏幕等进行显示，而这些设备一般都是使用RGB色彩模型，因此此文章只讨论RGB色彩模型相关的问题。</p>
+          </div>
+          <div>
+            <h3 data-heading="CIE XYZ颜色空间" id="CIE_XYZ颜色空间" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>CIE XYZ颜色空间
+            </h3>
+          </div>
+          <div>
+            <p>CIE XYZ颜色空间之前有一个CIE RGB颜色空间，CIE XYZ颜色空间中的XYZ是对之前CIE RGB颜色空间的一个修改，因为之前CIE RGB颜色空间不能表达出人眼可见的所有颜色(因为此时的三原色刺激值中的红色部分有负值)。XYZ近似对应红绿蓝。<a data-tooltip-position="top" aria-label="https://zhuanlan.zhihu.com/p/137639368" rel="noopener" class="external-link" href="https://zhuanlan.zhihu.com/p/137639368" target="_blank">[1]</a><br>
+              下图为CIE xy 色度图(Chromaticity Diagram)，之所以只用xy是因为，任何可见光颜色都可以通过XYZ三个分量进行一定比例混合，且x + y + z = 1，因此z = 1 - x - y。下图三角形区域表示原来的CIE RGB颜色空间。</p>
+          </div>
+          <div>
+            <center><img style="zoom:50%;" alt="img" src="https://pic3.zhimg.com/80/v2-21b121ab49d3ffae0c09483f9cddaf5a_720w.webp" referrerpolicy="no-referrer"></center>
+            CIE XYZ颜色空间可以表达所有的可见颜色(上图的奇怪蹄状三角区域就是人眼可见光区域，但是XYZ能够表达式的范围显然不至于此)，是**绝对颜色空间**，因此常常用这个CIE xy色度图来度量其他颜色空间的**色域(Gamut)**，这种表示方法也叫**三色刺激值**(Tristimulus Value)表示，也称为**色度**(Chromaticity)表示。
+            然后这个CIE XYZ颜色空间和CIE xy色度图很哈人的一点就是，色度图上两点之间的中间位置，完全符合人眼感知的，两颜色的中间值。毕竟是根据人眼感知特性来创造的颜色空间。
+            ### RGB色彩空间
+            RGB色彩模型下有很多色彩空间，常见的有sRGB、Adobe RGB、ProPhoto RGB、DCI-P3、Rec.2020、Rec.709、ACES2065-1、ACEScc/ACEScct、ACEScg。
+            #### 白点(White Point)和原色(Primaries)
+            **白点**是一个色彩空间里设定为白色的点，用开尔文或者色度来表示。**原色**就是一个色彩空间的基本颜色，其他颜色都可以通过这些基本颜色进行表示，也用色度表示。每个色彩空间有不同的原色、白点。[\[2\]](https://www.pcmag.com/encyclopedia/term/white-point)
+            以DCI-P3 D65色彩空间为例(D65表示其白点为6500开尔文色温的颜色)，其白点为(0.3127, 0.3290)，原色为R = (0.68, 0.32)，G = (0.265, 0.650)，B = (0.15, 0.06)。
+            另外，RGB色彩模式下的色彩空间，在CIE xy色度图上的表示显然都是三角形区域，每一个顶点表示了一个原色，因此其能够表达的颜色区域自然只能是三原色围起来的三角形区域。
+            #### 伽马(Gamma)空间和伽马校正
+            以sRGB为例，由于sRGB色彩空间提出的时代，流行的CRT显示器显示图片时，实际发出的亮度和电信号(也就是颜色数据)表示的亮度不是线性的，而是有一个2.2次幂的非线性关系，因此需要提前对图像数据进行一个1 / 2.2 = 0.4545的一个幂次变换，此过程称为**伽马校正**，校正过后的图像数据处在**伽马空间**中。但是其实sRGB并不只是一个单纯的伽马校正，是个接近1 / 2.2的分段函数。
+            现代的显示器其电压亮度响应函数其实是可调的，但是现代显示器一般都支持这个2.2次幂的传统，因此现在sRGB还是非常的常用。
+            然后Rec.709色彩空间也是一个伽马空间，通常认为它的伽马值为2.4，但实际上也是个分段函数。Rec.709和sRGB其实色域差不多。
+            显而易见的，对一个颜色空间应用伽马校正，会变成另一个颜色空间，但是这两个颜色空间的色域是不变的，因为应用幂次变换后显然原色和白点都不会变。
+            #### 经典色彩空间
+            ##### sRGB
+            sRGB(Standard RGB)是目前最常用的色彩空间，它是一个带有伽马的色彩空间。sRGB在色度图上的面积现在来看其实是比较小的。
+            &gt; sRGB最初设计的目的是作为生成在[因特网](https://zh.wikipedia.org/wiki/因特网)以及[万维网](https://zh.wikipedia.org/wiki/万维网)上浏览的图像的通用色彩空间，最后选择的是使用[Gamma校准](https://zh.wikipedia.org/wiki/伽马校正)系数为**2.2**的色彩空间，即[CRT](https://zh.wikipedia.org/wiki/CRT)显示器在这种情况下的平均线性电压响应。[\[3\]](https://zh.wikipedia.org/wiki/SRGB%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4)
+          </div>
+          <div>
+            <p>我们现在，一般的贴图、图片、照片等一般都是处在sRGB空间下。</p>
+          </div>
+          <div>
+            <h5 data-heading="DCI-P3" id="DCI-P3" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>DCI-P3
+            </h5>
+          </div>
+          <div>
+            <p>DCI-P3蛮怪的，它的色温是6300开尔文，但不是在CIE Standard Illuminant下的，所以不能称为63D，而且白点稍微有点发绿，好怪。然后它是一个系数为2.6的伽马空间，这是为了能适当兼容sRGB。但是DCI-P3色域比sRGB大了有30%，因此许多HDR设备都用这个色彩空间，比如你的手机。</p>
+          </div>
+          <div>
+            <h5 data-heading="Display-P3" id="Display-P3" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Display-P3
+            </h5>
+          </div>
+          <div>
+            <p>Display-P3是苹果创造的色彩空间，要正常一点。它使用65D的白点，系数为2.2的伽马空间，非常兼容sRGB，感觉还不错。</p>
+          </div>
+          <div>
+            <h5 data-heading="Rec.2020及P3-D65" id="Rec.2020及P3-D65" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Rec.2020及P3-D65
+            </h5>
+          </div>
+          <div>
+            <p>Rec.2020又比上面两个P3的色域大上一圈，色域相当不错，但是显然造价更高，在激光影院可能会使用。<br>
+              实际上几个HDR格式HDR10、HDR10+、Dolby Vision、HLG的技术极限都是Rec.2020，普遍的色彩空间都是<strong>P3-D65</strong>(一个和DCI-P3与Display-P3都不同的P3色域)。<br>
+              Adobe RGB和DCI-P3的色域面积是差不多的，然而是两个差别不小的色彩空间，所以说在选购显示器的时候不要只关注色域的面积，主要看它的色度图以及和你想要的色彩空间的覆盖率。</p>
+          </div>
+          <div>
+            <h2 data-heading="HDR(High Dynamic Range)" id="HDR(High_Dynamic_Range)" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>HDR(High Dynamic Range)
+            </h2>
+          </div>
+          <div>
+            <p>sRGB和Rec. 709色域蛮窄，覆盖了色度图35.9%左右区域<a data-tooltip-position="top" aria-label="https://zhuanlan.zhihu.com/p/138295496" rel="noopener" class="external-link" href="https://zhuanlan.zhihu.com/p/138295496" target="_blank">[4]</a>，使用它作为色彩空间的OO称为SDR(Standard Dynamic Range)。相对的HDR的色域就蛮高。下面是一些HDR格式的参数<a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/High-dynamic-range_television" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/High-dynamic-range_television" target="_blank">[5]</a>。</p>
+          </div>
+          <div style="overflow-x: auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th align="center"></th>
+                  <th align="center">HDR10</th>
+                  <th align="center">HDR10+</th>
+                  <th align="center">Dolby Vision</th>
+                  <th align="center">HLG</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="center">Developed by</td>
+                  <td align="center"><a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Consumer_Technology_Association" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/Consumer_Technology_Association" target="_blank">CTA</a></td>
+                  <td align="center"><a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Samsung" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/Samsung" target="_blank">Samsung</a></td>
+                  <td align="center"><a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Dolby_Laboratories" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/Dolby_Laboratories" target="_blank">Dolby</a></td>
+                  <td align="center"><a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/NHK" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/NHK" target="_blank">NHK</a> and <a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/BBC" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/BBC" target="_blank">BBC</a></td>
+                </tr>
+                <tr>
+                  <td align="center">Year</td>
+                  <td align="center">2015</td>
+                  <td align="center">2017</td>
+                  <td align="center">2014</td>
+                  <td align="center">2015</td>
+                </tr>
+                <tr>
+                  <td align="center">Cost</td>
+                  <td align="center">Free</td>
+                  <td align="center">Free (for content company)Yearly license (for manufacturer) <a data-href="42" href="42" class="internal-link is-unresolved" target="_self" rel="noopener">42\</a>(<a rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-42" target="_blank">https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-42</a>)</td>
+                  <td align="center">Proprietary</td>
+                  <td align="center">Free</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="overflow-x: auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th align="center"><a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Transfer_functions_in_imaging" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/Transfer_functions_in_imaging" target="_blank">Transfer function</a></th>
+                  <th>PQ</th>
+                  <th>PQ</th>
+                  <th>PQ (in most profiles)<a data-href="43" href="43" class="internal-link is-unresolved" target="_self" rel="noopener">43\</a>(<a rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:332-43)SDR" target="_blank">https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:332-43)SDR</a> (in profiles 4, 8.2, and 9)<a data-href="43" href="43" class="internal-link is-unresolved" target="_self" rel="noopener">43\</a>(<a rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:332-43)HLG" target="_blank">https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:332-43)HLG</a> (in profile 8.4)<a data-href="43" href="43" class="internal-link is-unresolved" target="_self" rel="noopener">43\</a>(<a rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:332-43" target="_blank">https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:332-43</a>)</th>
+                  <th><a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Hybrid_log%E2%80%93gamma" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/Hybrid_log%E2%80%93gamma" target="_blank">HLG</a></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="center"><a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Color_depth" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/Color_depth" target="_blank">Bit Depth</a></td>
+                  <td>10 bit</td>
+                  <td>10 bit (or more)</td>
+                  <td>10 bit (or 12 bit using FEL)<a data-href="note 1" href="note 1" class="internal-link is-unresolved" target="_self" rel="noopener">note 1\</a>(<a rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-45" target="_blank">https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-45</a>)</td>
+                  <td>10 bit</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="overflow-x: auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th align="center">Peak <a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Luminance" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/Luminance" target="_blank">luminance</a></th>
+                  <th align="center">Technical limit</th>
+                  <th>10,000 nits</th>
+                  <th>10,000 nits</th>
+                  <th>10,000 nits</th>
+                  <th>Variable</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="center">Contents</td>
+                  <td align="center">No rules1,000 - 4,000 nits (common)<a data-href="10" href="10" class="internal-link is-unresolved" target="_self" rel="noopener">10\</a>(<a rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:32-10" target="_blank">https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:32-10</a>)</td>
+                  <td>No rules1,000 - 4,000 nits (common)<a data-href="10" href="10" class="internal-link is-unresolved" target="_self" rel="noopener">10\</a>(<a rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:32-10" target="_blank">https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:32-10</a>)</td>
+                  <td>(At least 1,000 nits<a data-href="45" href="45" class="internal-link is-unresolved" target="_self" rel="noopener">45\</a>(<a rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:12-46))4,000" target="_blank">https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:12-46))4,000</a> nits common<a data-href="10" href="10" class="internal-link is-unresolved" target="_self" rel="noopener">10\</a>(<a rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:32-10" target="_blank">https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:32-10</a>)</td>
+                  <td>1,000 nits common<a data-href="46" href="46" class="internal-link is-unresolved" target="_self" rel="noopener">46\</a>(<a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:8-47)%5B%5B8%5C%5D%5D(https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:13-8" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:8-47)%5B%5B8%5C%5D%5D(https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:13-8" target="_blank">https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:8-47)[[8\]](https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:13-8</a>)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td align="center"><a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Primary_color" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/Primary_color" target="_blank">Color primaries</a></td>
+                  <td align="center">Technical limit</td>
+                  <td><a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Rec._2020" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/Rec._2020" target="_blank">Rec. 2020</a></td>
+                  <td><a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Rec._2020" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/Rec._2020" target="_blank">Rec. 2020</a></td>
+                  <td><a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Rec._2020" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/Rec._2020" target="_blank">Rec. 2020</a></td>
+                  <td><a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Rec._2020" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/Rec._2020" target="_blank">Rec. 2020</a></td>
+                </tr>
+                <tr>
+                  <td align="center">Contents</td>
+                  <td align="center">P3-D65 (common)<a data-href="9" href="9" class="internal-link is-unresolved" target="_self" rel="noopener">9\</a>(<a rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:7-9" target="_blank">https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:7-9</a>)</td>
+                  <td>P3-D65 (common)<a data-href="9" href="9" class="internal-link is-unresolved" target="_self" rel="noopener">9\</a>(<a rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:7-9" target="_blank">https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:7-9</a>)</td>
+                  <td>At least P3-D65<a data-href="45" href="45" class="internal-link is-unresolved" target="_self" rel="noopener">45\</a>(<a rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:12-46" target="_blank">https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:12-46</a>)</td>
+                  <td>P3-D65 (common)<a data-href="9" href="9" class="internal-link is-unresolved" target="_self" rel="noopener">9\</a>(<a rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:7-9" target="_blank">https://en.wikipedia.org/wiki/High-dynamic-range_television#cite_note-:7-9</a>)</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <p>HDR10、HDR10+、Dolby Vision都是使用PQ传输函数(Transfer Function)。<br>
+              这些HDR格式，由于色域比sRGB提高了不少，因此也需要用更多的比特来精确地表示颜色(说实话，Rec.2020的色域覆盖了75.8%<a data-tooltip-position="top" aria-label="https://en.wikipedia.org/wiki/Rec._2020" rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/Rec._2020" target="_blank">[6]</a>的CIE 1931色彩空间，感觉用12bit的bpc才勉强能行)，因此HDR都是10bit起步的(虽然好多8抖10的)。</p>
+          </div>
+          <div>
+            <h3 data-heading="传输函数(Transfer Function)" id="传输函数(Transfer_Function)" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>传输函数(Transfer Function)
+            </h3>
+          </div>
+          <div>
+            <p>也有人翻译为<strong>转换函数</strong>，实际上就是起到一个转换的作用。<br>
+              传输函数分为<strong>OETF(opto-electronic transfer function，光电传输函数)、EOTF(electro-optical transfer function，电光传输函数)、OOTF(opto-optical transfer function，光光传输函数)</strong><br>
+              OOTF说是OETF除以EOTF的结果，可能是用来衡量看到的和拍摄的之间失真度的东西。<br>
+              OETF是从摄像机等输入设备到图像数据的转换函数，在摄像机内完成，我不太想研究这部分。<br>
+              <strong>EOTF</strong>是从图像数据到光信号的转换函数，这是在显示器内完成的，例如前面说到的sRGB和Rec.709，就需要先进行一次伽马校正，这样在经过EOTF之后才是显示的正常的光。大家都喜欢的HDR10、HDR10+、Dolby Vision在设备上会进行PQ转换，所以应该要在此之前进行反PQ编码，HLG同理，不过是HLG转换和反HLG编码。<br>
+              SDR的色彩范围始终是0到1的，这样在不同亮度峰值的显示器上的亮度是不同的<a data-tooltip-position="top" aria-label="https://zhuanlan.zhihu.com/p/144775352" rel="noopener" class="external-link" href="https://zhuanlan.zhihu.com/p/144775352" target="_blank">[7]</a>。而HDR的这些EOTF，以PQ为例，实现了0到10000尼特的转换，因此在不同显示器上的亮度也应该是一样的如果显示器支持的话。
+            </p>
+          </div>
+          <div>
+            <h3 data-heading="HDR和SDR之间的转换及显示过程中的颜色变换" id="HDR和SDR之间的转换及显示过程中的颜色变换" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>HDR和SDR之间的转换及显示过程中的颜色变换
+            </h3>
+          </div>
+          <div>
+            <p>微软有在文档里写普通的颜色变换管线和Windows实现任意两个色彩空间转换的过程<a data-tooltip-position="top" aria-label="https://learn.microsoft.com/en-us/windows/win32/wcs/display-calibration-mhc" rel="noopener" class="external-link" href="https://learn.microsoft.com/en-us/windows/win32/wcs/display-calibration-mhc" target="_blank">[8]</a>。</p>
+          </div>
+          <div>
+            <h4 data-heading="颜色变换管线" id="颜色变换管线" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>颜色变换管线
+            </h4>
+          </div>
+          <div>
+            <p>首先0是原本的色彩空间，首先如果这个色彩空间不是线性空间，则需要先进行反伽马变换1，变换完后就到了线性空间，线性空间的颜色就可以通过颜色矩阵2这种线性变换来变换到其他颜色空间，如果目标颜色空间也是一个伽马空间，则要施加一个对应的伽马校正3，然后就得到了转换后的颜色空间。<br>
+            </p>
+            <div alt="block diagram: source degamma, color matrix, target regamma" src="media/block_diagram!_source_degamma,_color_matrix,_target_regamma.png" class="internal-embed media-embed image-embed is-loaded"><img alt="block diagram: source degamma, color matrix, target regamma" src="lib\media\block_diagram!_source_degamma,_color_matrix,_target_regamma.png"></div>
+            <p></p>
+          </div>
+          <div>
+            <h4 data-heading="Windows的颜色变换管线" id="Windows的颜色变换管线" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Windows的颜色变换管线
+            </h4>
+          </div>
+          <div>
+            <p>Windows使用单独的管线。其实这个例子都不太像是颜色变换管线而是图像显示管线了<br>
+            </p>
+            <div alt="block diagram: source degamma; color matrix decomposed into source RGB to XYZ, XYZ to XYZ, and XYZ to target RGB; target regamma decomposed into wire transfer function, 1DLUT adjustment" src="media/block_diagram!_source_degamma;_color_matrix_decomposed_into_source_RGB_to_XYZ,_XYZ_to_XYZ,_and_XYZ_t.png" class="internal-embed media-embed image-embed is-loaded"><img alt="block diagram: source degamma; color matrix decomposed into source RGB to XYZ, XYZ to XYZ, and XYZ to target RGB; target regamma decomposed into wire transfer function, 1DLUT adjustment" src="lib\media\block_diagram!_source_degamma;_color_matrix_decomposed_into_source_rgb_to_xyz,_xyz_to_xyz,_and_xyz_t.png"></div><br>
+            介绍一下各个步骤：<br>
+            0. 其实还有第0步，那就是Framebuffer里面渲染得到的颜色数据，它们都是RGB伽马空间的，可以是sRGB, sYCC, HDR10, 或者scRGB颜色空间。<p></p>
+          </div>
+          <div>
+            <ol>
+              <li data-line="0">反伽马，转换到线性空间。</li>
+              <li data-line="1">2a、2b、2c是颜色空间转换的三个变换，它们乘在一起就是颜色空间的转换矩阵。<br>
+                2a：从线性空间转换到CIE XYZ的绝对颜色空间。<br>
+                2b：做一些例如校准的调整，可编程。<br>
+                2c：从CIE XYZ转换到目标的线性的RGB色彩空间上。<br>
+                2a和Framebuffer相关，2c和显示器相关，普通应用可以控制2b这个矩阵。<br>
+                然后上面的1、2都是在显示器驱动控制下完成的。</li>
+              <li data-line="7">也分两步。<br>
+                3a：使用EOTF来伽马校正，由显示器驱动完成。<br>
+                3b：做一些例如校准的调整，又是可编程的那种。<br>
+                3a的转换由wire format color space(实在搜不到)来指定，但应该就是显示器的颜色空间，例如SDR显示器就需要做一次伽马校正，HDR10显示器就需要做一次逆PQ(或称ST.2084)电光传输函数的变换。<br>
+                完成上述步骤后，Framebuffer(没错，还是在Framebuffer里)里的数据就会扫描到你GPU连接显示器的那条线里，然后显示。</li>
+            </ol>
+          </div>
+          <div>
+            <h4 data-heading="Windows的色彩显示流程" id="Windows的色彩显示流程" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>Windows的色彩显示流程
+            </h4>
+          </div>
+          <div>
+            <p>上面其实还不是完整的显示过程，第0步显然也是需要输入的，这部分说明了上文第0步是怎么来的<a data-tooltip-position="top" aria-label="https://learn.microsoft.com/en-us/windows/win32/direct3darticles/high-dynamic-range" rel="noopener" class="external-link" href="https://learn.microsoft.com/en-us/windows/win32/direct3darticles/high-dynamic-range" target="_blank">[9]</a>。</p>
+          </div>
+          <div>
+            <h5 data-heading="HDR" id="HDR" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>HDR
+            </h5>
+          </div>
+          <div>
+            <p>先说说Windows的HDR显示，首先HDR是在Windows10 1703才支持的，其步骤如下：<br>
+            </p>
+            <div alt="block diagram of HDR display stack: FP16, scRGB, with auto color management" src="media/block_diagram_of_HDR_display_stack!_FP16,_scRGB,_with_auto_color_management.png" class="internal-embed media-embed image-embed is-loaded"><img alt="block diagram of HDR display stack: FP16, scRGB, with auto color management" src="lib\media\block_diagram_of_hdr_display_stack!_fp16,_scrgb,_with_auto_color_management.png"></div>
+            <p></p>
+          </div>
+          <div>
+            <ul class="has-list-bullet">
+              <li data-line="0">
+                <div class="list-bullet"></div>APP就是每个窗体应用的Framebuffer，可以是任何色彩空间，最高支持32位浮点精度。
+              </li>
+              <li data-line="1">
+                <div class="list-bullet"></div>DWM(Desktop Window Manager)是用来混合窗体的，简单来说就是把各个应用的窗体给合成成一个Framebuffer，这一步会将各种窗体不管什么颜色空间都给转换到scRGB颜色空间下——scRGB是一个色域宽到离谱的线性颜色空间，其色域感觉是就是把sRGB放大了一倍，所以精度也使用了16位浮点。<br>
+                16位浮点精度的scRGB也称为CCCS(canonical composition color space)，是为了把各种窗体各种不同的色彩空间都统一转换到CCCS方便管理。
+                <center><img style="zoom: 50%;" alt="ScRGB.svg" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/46/ScRGB.svg/800px-ScRGB.svg.png" referrerpolicy="no-referrer"></center>
+              </li>
+              <li data-line="4">
+                <div class="list-bullet"></div>Display Kernel是将CCCS转换到 wire format color space的(例如BT.2100 ST.2084)，然后<em>可选的</em>，Windows会使用前文所述的<em>Windows的颜色变换管线</em>进行处理。
+              </li>
+              <li data-line="5">
+                <div class="list-bullet"></div>System Color Management还没研究。
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 data-heading="SDR" id="SDR" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>SDR
+            </h5>
+          </div>
+          <div>
+            <p>SDR显示就是一坨，不管应用渲染得多精细，SDR显示都会Clip到8bpc。</p>
+          </div>
+          <div>
+            <blockquote>
+              <p>Apps using graphics APIs such as DirectX could perform internal rendering using high bit-depths and extended color spaces; however, the OS supported only 8-bit integer with implicit sRGB and no system color management</p>
+              <p></p>
+              <div alt="block diagram of SDR display stack: limited to sRGB, 8-bit, with no color management" src="media/block_diagram_of_SDR_display_stack!_limited_to_sRGB,_8-bit,_with_no_color_management.png" class="internal-embed media-embed image-embed is-loaded"><img alt="block diagram of SDR display stack: limited to sRGB, 8-bit, with no color management" src="lib\media\block_diagram_of_sdr_display_stack!_limited_to_srgb,_8-bit,_with_no_color_management.png"></div>
+              <p></p>
+            </blockquote>
+          </div>
+          <div>
+            <p>然而......</p>
+          </div>
+          <div>
+            <h5 data-heading="SDR since Windows 11 22H2" id="SDR_since_Windows_11_22H2" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>SDR since Windows 11 22H2
+            </h5>
+          </div>
+          <div>
+            <p>喜大普奔，Windows 11 22H2及之后，SDR的显示流程也和HDR的类似了，至少来说支持超过8bpc的应用的数据了，超过8bpc的颜转换到CCCS之后会得到正确的结果，这样在10bpc的SDR显示器上能够显示更加丰富的颜色了。<br>
+            </p>
+            <div alt="block diagram of SDR AC display stack: FP16, scRGB, with auto color management" src="media/block_diagram_of_SDR_AC_display_stack!_FP16,_scRGB,_with_auto_color_management.png" class="internal-embed media-embed image-embed is-loaded"><img alt="block diagram of SDR AC display stack: FP16, scRGB, with auto color management" src="lib\media\block_diagram_of_sdr_ac_display_stack!_fp16,_scrgb,_with_auto_color_management.png"></div><br>
+            泪目。<p></p>
+          </div>
+          <div>
+            <h4 data-heading="把游戏引擎渲染纳入考虑......" id="把游戏引擎渲染纳入考虑......" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>把游戏引擎渲染纳入考虑......
+            </h4>
+          </div>
+          <div>
+            <p>如果把游戏引擎的渲染流程纳入考虑，那么Windows的，线性工作流下的游戏引擎渲染流程就是：<br>
+            </p>
+            <div alt="游戏中的空间转换" src="media/游戏中的空间转换.webp" class="internal-embed media-embed image-embed is-loaded"><img alt="游戏中的空间转换" src="lib\media\游戏中的空间转换.webp"></div><br>
+            色调映射发生在渲染这个过程。<p></p>
+          </div>
+          <div>
+            <h4 data-heading="关于帧缓冲(Framebuffer)" id="关于帧缓冲(Framebuffer)" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>关于帧缓冲(Framebuffer)
+            </h4>
+          </div>
+          <div>
+            <p>帧缓冲就是用来存需要显示在显示器上数据的显存。在Vulkan API下<a data-tooltip-position="top" aria-label="https://github.com/liangz0707/whoimi/blob/master/blogs/GPUAartch/HDR%E7%A1%AC%E4%BB%B6%E5%B1%82Framebuffer%E6%A0%BC%E5%BC%8F%E6%A0%87%E5%87%86%E4%B8%8E%E6%B8%B2%E6%9F%93%E9%98%B6%E6%AE%B5%E7%9A%84%E5%85%B3%E7%B3%BB.md" rel="noopener" class="external-link" href="https://github.com/liangz0707/whoimi/blob/master/blogs/GPUAartch/HDR%E7%A1%AC%E4%BB%B6%E5%B1%82Framebuffer%E6%A0%BC%E5%BC%8F%E6%A0%87%E5%87%86%E4%B8%8E%E6%B8%B2%E6%9F%93%E9%98%B6%E6%AE%B5%E7%9A%84%E5%85%B3%E7%B3%BB.md" target="_blank">[10]</a>：</p>
+          </div>
+          <div>
+            <blockquote>
+              <p>对于<strong>SDR</strong>屏幕，Buffer主要有：<br>
+                R8G8B8A8_UNORM：首先屏幕的EOTF曲线是始终存在的，这种格式输入的颜色，图像接口不会进行任何处理，需要我们自己在shader中进行sRGB编码。<br>
+                R8G8B8A8_SNORM：这种格式输入的颜色在显示之前会自动编码到SRGB空间（自动Gamma矫正），所以我们不需要进行处理，也就是说shader当中直接写出线性颜色即可。A通道是线性的。<br>
+                对于<strong>HDR</strong>屏幕，Buffer主要有：<br>
+                R16G16B16_Float:这种格式输出的是线性浮点数颜色，数据可以超过1，1对应的是80nits。使用的是scRGB。<br>
+                DX的参考：<a rel="noopener" class="external-link" href="https://docs.microsoft.com/en-us/windows/win32/direct3darticles/high-dynamic-range" target="_blank">https://docs.microsoft.com/en-us/windows/win32/direct3darticles/high-dynamic-range</a><br>
+                R10G10B10A2_UNORM：这种格式不会进行任何处理，直接结合EOFT曲线进行显示， 所以需要我们自己在Shader中进行PQ编码。（在我的显示器上Vulkan不支持，暂时没有测试过，但是GL和DX是支持这个格式的）<br>
+                VK_COLOR_SPACE_HDR10_ST2084_EXT：说明colorSpace，表示使用BT2020颜色空间，使用ST2048的EOTF。</p>
+            </blockquote>
+          </div>
+          <div>
+            <p>这些图形API输出的帧缓冲应该都是上文<em>Windows的色彩显示流程</em>中APP的输入，由于<em>Windows的色彩显示流程</em>阶段会将图形API输出的帧缓冲根据其色彩空间转换到scRGB或说CCCS，因此我们只需要保证在渲染时，渲染出的图像数据和色彩空间匹配即可，按Vulkan来说就是要让Color Attachment是正确的。<br>
+              此外，感觉和我一样搞游戏技术的，都会觉得图像API输出的帧缓冲就是天，实际上其他所有窗口都会输出帧缓冲数据，然后交由DWM来合成，合成后的内容也是储存在帧缓冲里，甚至由显示器驱动进行的处理也是存在帧缓冲的——帧缓冲不是什么特别的东西。</p>
+          </div>
+          <div>
+            <h4 data-heading="色调映射(Tone Mapping)" id="色调映射(Tone_Mapping)" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>色调映射(Tone Mapping)
+            </h4>
+          </div>
+          <div>
+            <p>上文其实已经解释过了如何从HDR的颜色空间(如P3-D65)转换到SDR的颜色空间(如sRGB)，但是简单地从色域较大的空间转换到色域较小的空间，一定会产生SDR中无法表现的颜色，如果直接将超出范围的颜色进行截断，就会出现如大片相同颜色，因此需要在转换之前先进行色调映射。此外HDR图像是浮点表示的，可能会产生值超过1的部分，但SDR是归一化的色彩空间，所以数据上来说，其归一化后的数值只能从0到1，要将HDR图像转换到SDR，就需要色调映射(个人理解，不知道对不对)。此外，不仅HDR到SDR之间需要色调映射，当用于显示的HDR显示器峰值亮度不够时，也可以用色调映射进行HDR到HDR的转换。<br>
+              上文的色调映射都是针对于显示器显示的，而游戏显然也会应用色调映射，但是游戏中的色调映射就不一定是用于“正确地显示颜色”，还有可能用于调色(当然经过调色的色调映射之后我认为应该最后应用一次ACES 色调映射)。<br>
+              色调映射的算法蛮多，比较常用的有CE Tone Mapping、Filmic Tone Mapping，但现在基本都被ACES色调映射统一了<a data-tooltip-position="top" aria-label="https://zhuanlan.zhihu.com/p/21983679" rel="noopener" class="external-link" href="https://zhuanlan.zhihu.com/p/21983679" target="_blank">[11]</a>。这篇文章说ACES色调映射是ACES提出的，但是我找不到任何证据(比如ACES官网上查不到任何色调映射相关的文字)说明这是ACES提出，而应该是Epic Games的图程Krzysztof Narkowicz基于ACES的ODT提出的，他在他的博客中有提到<a data-tooltip-position="top" aria-label="https://knarkowicz.wordpress.com/2016/01/06/aces-filmic-tone-mapping-curve/" rel="noopener" class="external-link" href="https://knarkowicz.wordpress.com/2016/01/06/aces-filmic-tone-mapping-curve/" target="_blank">[12]</a>，在研究出来之后称为了UE的默认色调映射函数，UE的文档<a data-tooltip-position="top" aria-label="https://docs.unrealengine.com/4.26/en-US/RenderingAndGraphics/PostProcessEffects/ColorGrading/" rel="noopener" class="external-link" href="https://docs.unrealengine.com/4.26/en-US/RenderingAndGraphics/PostProcessEffects/ColorGrading/" target="_blank">[13]</a>可以看到。</p>
+          </div>
+          <div>
+            <center><img style="zoom:85%;" alt="img" src="https://pic1.zhimg.com/80/0149709ceeb67532d4202a1a450f3584_720w.webp" referrerpolicy="no-referrer"></center>
+            ACES色调映射不仅比较符合感知，细节损失较少，而且代码很简单，开销可以接受大概，很适合用在游戏里，比如UE4.8及之后就全面支持了ACES色调映射。下面是Krzysztof Narkowicz写的最初版的HLSL代码。
+            ```cpp
+            float3 ACESToneMapping(float3 color, float adapted_lum)
+            {
+            const float A = 2.51f;
+            const float B = 0.03f;
+            const float C = 2.43f;
+            const float D = 0.59f;
+            const float E = 0.14f;
+          </div>
+          <div>
+            <pre><code>color *= adapted_lum;
+return (color * (A * color + B)) / (color * (C * color + D) + E);
+</code><button class="copy-code-button">复制</button></pre>
+          </div>
+          <div>
+            <p>}```<br>
+              建议称其为<strong>ACES色调映射</strong>或者<strong>ACES Filmic Tone Mapping</strong>，而不是简单的ACES，不然很容易和真正的ACES(学院颜色编码系统)弄混。</p>
+          </div>
+          <div>
+            <h2 data-heading="ACES(Academy Color Encoding System)流程" id="ACES(Academy_Color_Encoding_System)流程" style="display: flex;">
+              <div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                  <path d="M3 8L12 17L21 8"></path>
+                </svg></div>ACES(Academy Color Encoding System)流程
+            </h2>
+          </div>
+          <div>
+            <p>中文是学院颜色编码系统，大家都简称为ACES。它的优势在于，给影片制作的全部流程，都提供了一个统一的色彩管理，且由于其较大的色域，并参与了影片从拍摄到放映的全过程，相比传统流程来说质量更好<a data-tooltip-position="top" aria-label="https://blog.frame.io/2019/09/09/guide-to-aces/" rel="noopener" class="external-link" href="https://blog.frame.io/2019/09/09/guide-to-aces/" target="_blank">[14]</a>。<br>
+            </p>
+            <div alt="ACES system and color spaces - image quality preservation" src="media/ACES_system_and_color_spaces_-_image_quality_preservation.png" class="internal-embed media-embed image-embed is-loaded"><img alt="ACES system and color spaces - image quality preservation" src="lib\media\aces_system_and_color_spaces_-_image_quality_preservation.png"></div><br>
+            ACES其实是包含了很多部分的<a data-tooltip-position="top" aria-label="https://zhuanlan.zhihu.com/p/102701796#ACES%E9%83%BD%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%EF%BC%9F" rel="noopener" class="external-link" href="https://zhuanlan.zhihu.com/p/102701796#ACES%E9%83%BD%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86%EF%BC%9F" target="_blank">[15]</a>：<p></p>
+          </div>
+          <div>
+            <blockquote>
+              <ul class="has-list-bullet">
+                <li data-line="0">
+                  <div class="list-bullet"></div>ACES Input Transform（IDT或输入设备转换）：它将摄影机独有的拍摄参考数据转换为线性场景的ACES色彩空间。目前，摄影机厂商会为自己的摄影机系统来开发IDT转换算法，然后ACES学院对其进行测试和验证，未来ACES学院会拥有更多的控制权。IDT转换和其它ACES转换一样也是用CTL（色彩转换语言）编程语言来编写的。IDT并不是完全与摄影机系统一对一的关系，有时也会将不同的IDT应用于同一个摄影机系统来补偿一些摄影机系统中因不同设置所带来的差别。
+                </li>
+                <li data-line="1">
+                  <div class="list-bullet"></div>ACES Look Transform（LMT或外观修改转换）：它是ACES观看转换（它由LMT、RRT和ODT系统组成）的一部分，它提供一种类似于将LUT应用于镜头的方法。不同的是，LMT位于ACES色彩的调色流程之后，且并非所有工作都支持它。
+                </li>
+                <li data-line="2">
+                  <div class="list-bullet"></div>Reference Rendering Transform（RRT或参考渲染转换）：你可以将其理解为ACES的渲染引擎组件，RRT将场景参考的线性数据转换为超宽的显示参考数据集。RRT与ODT一起为显示创建可视化的数据。
+                </li>
+                <li data-line="3">
+                  <div class="list-bullet"></div>ACES Output Transform（ODT或输出设备转换）：这是ACES流程的最后一步，它从RRT获得超宽和高动态范围的数据后，转换为不同显示设备所对应的色彩空间，比如P3、Rec.709、Rec.2020等。
+                </li>
+              </ul>
+            </blockquote>
+          </div>
+          <div>
+            <p>ACES的野心不小，它囊括了拍摄、调色、特效、显示、归档各个阶段，流程可以归纳为如下图<a data-tooltip-position="top" aria-label="https://www.dropbox.com/s/0xhva7vniipx3zk/TB-2014-004.pdf?dl=0" rel="noopener" class="external-link" href="https://www.dropbox.com/s/0xhva7vniipx3zk/TB-2014-004.pdf?dl=0" target="_blank">[16]</a>：<br>
+            </p>
+            <div alt="ACES流程" src="media/ACES流程.webp" class="internal-embed media-embed image-embed is-loaded"><img alt="ACES流程" src="lib\media\aces流程.webp"></div><br>
+            其中摄像机部分的流程应当如下图，不管是真实的摄像机还是各种渲染器/渲染引擎的摄像机，都会经过IDT变换变换到ACES2065-1色彩空间：<p></p>
+          </div>
+          <div>
+            <center><img style="zoom: 50%;" alt="The ACES Input Device Transform section with the Reference Input Capture Device" src="https://www.researchgate.net/profile/Eberhard-Hasche/publication/326779225/figure/fig1/AS:713800890195968@1547194802226/The-ACES-Input-Device-Transform-section-with-the-Reference-Input-Capture-Device.png" referrerpolicy="no-referrer"></center>
+            ACES Central举的一个ACES流程的例子为下图：
+            ![img](media/img.webp)
+            可以看到，在摄像期间，摄像机捕获到的自然界的光线会经过OETF先转换成电信号(现在是在摄像机自己的log颜色空间下)，然后再经过**IDT**(Input Device Transform)后转换到**ACES2065-1色彩空间**。
+            其实IDT是ACES第一版的称呼，现在改名为Input Transform了[\[17\]](https://en.wikipedia.org/wiki/Academy_Color_Encoding_System)，但好像还是简称IDT。
+            ### ACES的色彩空间
+            ACES中规定和使用了几个色彩空间：
+            0. <font color="#f79646">AP0(ACES Color Primaries 0)</font>规定了一组原色，这组原色的色域包含了整个CIE色度图，好牛。然后<font color="#f79646">AP1(ACES Color Primaries 1)</font>也规定了一组原色，这组原色的色域就要小不少。
+            AP0和AP1的色域[\[18\]](https://commons.wikimedia.org/wiki/File:CIE_xy_Chromaticity_Diagram_of_ACES_and_other_colorspaces.svg?uselang=zh-cn)如下：
+            <center><img style="zoom:67%;" alt="File:CIE xy Chromaticity Diagram of ACES and other colorspaces.svg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/CIE_xy_Chromaticity_Diagram_of_ACES_and_other_colorspaces.svg/600px-CIE_xy_Chromaticity_Diagram_of_ACES_and_other_colorspaces.svg.png?20180626202546" referrerpolicy="no-referrer"></center>
+            1. <font color="#f79646">ACES2065-1</font>使用<font color="#f79646">AP0</font>的原色，是一个线性空间，主要是为了存储、归档素材[\[19\]](https://acescentral.com/knowledge-base-2/aces-working-spaces/)而设计的，
+            2. <font color="#f79646">ACES2065-1</font>也是在ACES中用于进行色彩交换的中间空间，例如说在进行ACEScc转换到P3-D65的过程中，就要先转换到ACES2065-1再转到P3-D65，就类似Windows上使用的scRGB。
+            3. <font color="#f79646">ACEScc</font>使用<font color="#f79646">AP1</font>原色，是一个log空间，这个空间可以用于分级调色(Color Grading)中，说是因为有些调色师喜欢在log空间下调色。
+            4. <font color="#f79646">ACEScct</font>和<font color="#f79646">ACEScc</font>差不多，只是在趾(Toe)部会有一些抬升。
+            &gt; A variant of ACEScc color space, except that it adds a “toe” to make it more akin to traditional “log” curves to generate a distinct “milking” or “fogging” of shadows under lift operations, which is typical of some film looks. This comes from requests to provide colorists with a grading environment more similar to that of traditional legacy log film scan encodings when grading using a working space from the “ACES” family of color spaces.
+            5. <font color="#f79646">ACEScg</font>也是使用<font color="#f79646">AP1</font>原色，是一个线性空间，一般在这个空间里进行合成、特效、绘画和其他CG相关的工作。
+            可能读者会有些疑惑，这个ACEScg是一个线性空间，那岂不是说我们在进行合成时看到的色彩竟然是处在线性空间的，置显示器EOTF于何处！
+            其实ACES这些色彩空间，都是需要先转换到sRGB、VP-D65等显示器的色彩空间之后再显示的——目前还没有ACES的显示器——上面流程图中的RRT&amp;ODT就是进行了这些处理，以我们用sRGB屏幕来显示ACEScg的内容来说，会有一个ACEScg-&gt;ACES2065-&gt;sRGB的过程，第一步称为**RRT**(Reference Rendering Transform)，第二步称为**ODT**(Out Device Transform)，这两个过程合称为Output Transform(wikipedia说的，感觉有点怪)。
+            **LMT**(Look Modification Transform)是用在ACES色彩空间之间进行转换的步骤，例如在分级调色之前就需要将ACES的某种色彩空间转换到ACEScc或者ACEScct色彩空间中去。
+            wikipedia上说LMT + RRT + ODT才组成**Academy Viewing Transform**，但我还不太懂LMT在这里的作用是什么。
+            注意，读者如果要去阅读ACES的文档，需要理解文档中提到的*scene-referred*或者说*scene-linear*是指ACES2065-1，猜测因为它的色彩空间足够大所以称之为“referred”。
+            ### ACES工作流
+            伽马、色彩空间、位深度在ACES的每个过程中如下图[\[19\]](https://community.acescentral.com/t/acescc-vs-acescct/485/21)所示：
+            ![img](media/img.jpg)
+            1. 摄像机。在摄像机拍摄的流程中，摄像机拍摄后的图像应该是在摄像机自身的log空间下的，然后现在摄像机厂商一般会提供IDT转换的方法，将图像转换为ACES2065-1色彩空间的，16位浮点精度的图像。例如索尼的Raw Viewer[\[20\]](https://www.sonycreativesoftware.com/zh/rawviewer)就能根据不同的相机型号转换到ACES2065-1色彩空间。
+            2. 视觉特效。视觉特效不需要输入，<span style="background:rgba(74, 82, 199, 0.2)">直接就在ACEScg色彩空间下工作</span>。各种VFX软件应当要或将要支持ACEScg色彩空间，因为在**VFX Reference Platform**[\[21\]](https://vfxplatform.com/)这里规定了OpenColorIO和ACES的支持以及版本。OpenColorIO(简称OPIO)就是那个帮助我们在各种颜色空间，甚至于不同型号的相机的颜色空间进行转换的工具。
+            对于VFX工作者需要注意的是：
+            + 反照率/基本色、发光之类的表示颜色的贴图需要转换到ACEScg空间再赋予到材质上。一般的贴图都是在sRGB色彩空间下的，因此需要先进行一个sRGB到ACEScg的变换。可以使用OPIO从 "Utility - sRGB - Texture"转换到“ACES - ACEScg”，我想一般在渲染引擎/渲染器里都会有集成(但是显然某些常用软件不太支持)。
+            + 其他的法线、置换、金属度/高光度、粗糙度/光滑度等贴图，还是需要处在线性空间。
+            + 渲染的影片仍然在ACEScg色彩空间中。
+            3. <span style="background:rgba(74, 82, 199, 0.2)">剪辑、合成等都是在ACEScg下进行的</span>。
+            4. 调色是在ACEScc下进行的，需要先从ACEScg或者ACES2065-1经过LMT转换。
+            5. Output Transform，也就是RRT和ODT会将最后的成片进行输出，输出到显示器或者银幕。我没有查到是在什么阶段进行的交付，我猜测是看你流程最后一步是在ACEScc/ACEScct还是ACEScg，然后就在这个颜色空间交付，因为显然经过RRT转换会有精度损失(虽然迟早都会发生)，还有一个猜测是在RRT之后转换到ACES2065-1交付，这样比较统一。我倾向于认为是后者。
+            ---
+            本来想再写一点线性工作流和伽马工作流的，不过这个前人应该都叙述比较详细了，就偷懒了，可以参考这篇文章[\[22\]](https://zhuanlan.zhihu.com/p/100131251)。
+            本文作者为[朵格Dolag](https://space.bilibili.com/19552499)，本文使用[CC BY 4.0知识分享协议]([Creative Commons Attribution 4.0 International | Choose a License](https://choosealicense.com/licenses/cc-by-4.0/))，转载引用需署名。
+          </div>
+          <div class="mod-footer">
+            <div class="embedded-backlinks" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-right sidebar">
+      <div class="sidebar-content"><span class="sidebar-section-header">Interactive Graph</span>
+        <div class="graph-view-placeholder">
+          <div class="graph-view-container">
+            <div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-arrow-up-right">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg></div>
+            <canvas id="graph-canvas" width="512px" height="512px"></canvas>
+          </div>
+        </div>
+        <div class="tree-container outline-tree" data-depth="0">
+          <div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button is-collapsed"><iconify-icon icon="ph:arrows-in-line-horizontal-bold" width="18px" height="18px" rotate="90deg" color="currentColor"></iconify-icon></button></div>
+          <div class="tree-scroll-area">
+            <div class="tree-item mod-tree-heading" data-depth="1">
+              <div class="tree-item-contents"><a class="tree-item-link" href="#色彩空间、HDR和ACES"><span class="tree-item-title">色彩空间、HDR和ACES</span></a></div>
+              <div class="tree-item-children">
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#色彩模型(Color_Model)"><span class="tree-item-title">色彩模型(Color Model)</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+                <div class="tree-item mod-tree-heading mod-collapsible is-collapsed" data-depth="2">
+                  <div class="tree-item-contents">
+                    <div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg></div><a class="tree-item-link" href="#色彩空间(Color_Space)"><span class="tree-item-title">色彩空间(Color Space)</span></a>
+                  </div>
+                  <div class="tree-item-children">
+                    <div class="tree-item mod-tree-heading mod-collapsible is-collapsed" data-depth="3">
+                      <div class="tree-item-contents">
+                        <div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                            <path d="M3 8L12 17L21 8"></path>
+                          </svg></div><a class="tree-item-link" href="#CIE_XYZ颜色空间"><span class="tree-item-title">CIE XYZ颜色空间</span></a>
+                      </div>
+                      <div class="tree-item-children">
+                        <div class="tree-item mod-tree-heading" data-depth="5">
+                          <div class="tree-item-contents"><a class="tree-item-link" href="#DCI-P3"><span class="tree-item-title">DCI-P3</span></a></div>
+                          <div class="tree-item-children"></div>
+                        </div>
+                        <div class="tree-item mod-tree-heading" data-depth="5">
+                          <div class="tree-item-contents"><a class="tree-item-link" href="#Display-P3"><span class="tree-item-title">Display-P3</span></a></div>
+                          <div class="tree-item-children"></div>
+                        </div>
+                        <div class="tree-item mod-tree-heading" data-depth="5">
+                          <div class="tree-item-contents"><a class="tree-item-link" href="#Rec.2020及P3-D65"><span class="tree-item-title">Rec.2020及P3-D65</span></a></div>
+                          <div class="tree-item-children"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tree-item mod-tree-heading mod-collapsible is-collapsed" data-depth="2">
+                  <div class="tree-item-contents">
+                    <div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                        <path d="M3 8L12 17L21 8"></path>
+                      </svg></div><a class="tree-item-link" href="#HDR(High_Dynamic_Range)"><span class="tree-item-title">HDR(High Dynamic Range)</span></a>
+                  </div>
+                  <div class="tree-item-children">
+                    <div class="tree-item mod-tree-heading" data-depth="3">
+                      <div class="tree-item-contents"><a class="tree-item-link" href="#传输函数(Transfer_Function)"><span class="tree-item-title">传输函数(Transfer Function)</span></a></div>
+                      <div class="tree-item-children"></div>
+                    </div>
+                    <div class="tree-item mod-tree-heading mod-collapsible is-collapsed" data-depth="3">
+                      <div class="tree-item-contents">
+                        <div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                            <path d="M3 8L12 17L21 8"></path>
+                          </svg></div><a class="tree-item-link" href="#HDR和SDR之间的转换及显示过程中的颜色变换"><span class="tree-item-title">HDR和SDR之间的转换及显示过程中的颜色变换</span></a>
+                      </div>
+                      <div class="tree-item-children">
+                        <div class="tree-item mod-tree-heading" data-depth="4">
+                          <div class="tree-item-contents"><a class="tree-item-link" href="#颜色变换管线"><span class="tree-item-title">颜色变换管线</span></a></div>
+                          <div class="tree-item-children"></div>
+                        </div>
+                        <div class="tree-item mod-tree-heading" data-depth="4">
+                          <div class="tree-item-contents"><a class="tree-item-link" href="#Windows的颜色变换管线"><span class="tree-item-title">Windows的颜色变换管线</span></a></div>
+                          <div class="tree-item-children"></div>
+                        </div>
+                        <div class="tree-item mod-tree-heading mod-collapsible is-collapsed" data-depth="4">
+                          <div class="tree-item-contents">
+                            <div class="tree-item-icon collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle">
+                                <path d="M3 8L12 17L21 8"></path>
+                              </svg></div><a class="tree-item-link" href="#Windows的色彩显示流程"><span class="tree-item-title">Windows的色彩显示流程</span></a>
+                          </div>
+                          <div class="tree-item-children">
+                            <div class="tree-item mod-tree-heading" data-depth="5">
+                              <div class="tree-item-contents"><a class="tree-item-link" href="#HDR"><span class="tree-item-title">HDR</span></a></div>
+                              <div class="tree-item-children"></div>
+                            </div>
+                            <div class="tree-item mod-tree-heading" data-depth="5">
+                              <div class="tree-item-contents"><a class="tree-item-link" href="#SDR"><span class="tree-item-title">SDR</span></a></div>
+                              <div class="tree-item-children"></div>
+                            </div>
+                            <div class="tree-item mod-tree-heading" data-depth="5">
+                              <div class="tree-item-contents"><a class="tree-item-link" href="#SDR_since_Windows_11_22H2"><span class="tree-item-title">SDR since Windows 11 22H2</span></a></div>
+                              <div class="tree-item-children"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tree-item mod-tree-heading" data-depth="4">
+                          <div class="tree-item-contents"><a class="tree-item-link" href="#把游戏引擎渲染纳入考虑......"><span class="tree-item-title">把游戏引擎渲染纳入考虑......</span></a></div>
+                          <div class="tree-item-children"></div>
+                        </div>
+                        <div class="tree-item mod-tree-heading" data-depth="4">
+                          <div class="tree-item-contents"><a class="tree-item-link" href="#关于帧缓冲(Framebuffer)"><span class="tree-item-title">关于帧缓冲(Framebuffer)</span></a></div>
+                          <div class="tree-item-children"></div>
+                        </div>
+                        <div class="tree-item mod-tree-heading" data-depth="4">
+                          <div class="tree-item-contents"><a class="tree-item-link" href="#色调映射(Tone_Mapping)"><span class="tree-item-title">色调映射(Tone Mapping)</span></a></div>
+                          <div class="tree-item-children"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tree-item mod-tree-heading" data-depth="2">
+                  <div class="tree-item-contents"><a class="tree-item-link" href="#ACES(Academy_Color_Encoding_System)流程"><span class="tree-item-title">ACES(Academy Color Encoding System)流程</span></a></div>
+                  <div class="tree-item-children"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
